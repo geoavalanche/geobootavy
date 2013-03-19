@@ -1,0 +1,198 @@
+/* CSS Document */
+
+img{
+	max-width:none;
+	width:100%;
+}
+
+form{
+	margin:0;
+}
+
+.navbar-search {
+    margin-top: 7px;
+}
+
+.navbar-search .search-query {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.input-append .add-on, .input-prepend .add-on {
+	background-color: #515151;
+    border-color: #111111;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    transition: none 0s ease 0s;
+	text-shadow:none;
+}
+
+
+div.language-box {
+    float: left;
+    margin: 7px 0 0;
+    padding: 0;
+}
+
+div.language-box select {
+    margin: 0;
+    width: 140px;
+	padding:-1px;
+	color:#333333;
+	font-size:14px;
+	padding: 4px 6px;
+    vertical-align: middle;
+}
+
+div#footer {
+    width: inherit !important;
+}
+
+
+
+.navbar {
+    background-color: #333333;
+    background-image: -moz-linear-gradient(center top , #444444, #222222);
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0;
+}
+
+.navbar-inverse .navbar-inner {
+    background-color: #384E64;
+    background-image: linear-gradient(to bottom, #384E64, #384E64);
+    background-repeat: repeat-x;
+    border-color: #333333;
+}
+
+.navbar-inner {
+    background-color: #333333;
+    background-repeat: repeat-x;
+	background-image:none;
+	border:0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar .nav > li > a {
+    color: #CCC;
+    float: none;
+    padding: 10px 15px;
+    text-decoration: none;
+	text-shadow:none;
+}
+
+.navbar .nav > li > a:hover {
+    color: #fff;
+}
+
+.input-append, .input-prepend {
+    margin-bottom: 0;
+}
+
+.navbar-inverse .navbar-search .search-query {
+    background-color: #333333;
+    border-color: #111111;
+    color: #FFFFFF;
+}
+
+.input-append .add-on, .input-append .btn, .input-append .btn-group {
+    margin-left: 1px;
+}
+
+.btn-inverse {
+    border-color: #111111;
+}
+
+.btn {
+    font-size: 13px;
+    padding: 6px 12px;
+}
+
+
+element.style {
+    background-color: #CC0000;
+}
+.page-main .swatch, .page-main .item-swatch {
+    border-color: #F1F1F1;
+}
+div.filters ul li a span {
+    font-size: 10px;
+}
+.swatch {
+    border: 1px solid white;
+    float: left;
+    height: 16px;
+    margin-right: 8px;
+    width: 16px;
+}
+.page-main ul.category-filters li a:hover, .page-main ul.category-filters li a.active {
+    color: inherit;
+}
+div.filters ul li a:hover, div.filters ul li a.active {
+    color: inherit;
+}
+div.filters ul li a:hover, div.filters ul li a.active {
+    color: #FFFFFF;
+}
+.page-main ul.category-filters li a {
+    font-size: 10px;
+}
+ul.category-filters li a:hover, ul.category-filters li a.active {
+    color: #FFFFFF;
+}
+div.filters ul li a {
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+}
+div.filters ul li a {
+    color: #999966;
+}
+ul.category-filters li a {
+    color: #3F3F3F;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 17px;
+    text-transform: uppercase;
+}
+.dropdown-menu li > a {
+    color: #333333;
+    font-weight: normal;
+    line-height: 20px;
+}
+h1, a, table.table-list tbody tr td a, .hover .r_details h3 a.r_title, div.footermenu ul li a, div.search-form input.text {
+    color: #D24836;
+}
+a {
+    color: #0088CC;
+}
+a {
+    color: #3764AA;
+}
+.page-main ul.category-filters li {
+    list-style-type: none;
+}
+ul.category-filters li {
+    list-style-type: none;
+}
+li {
+    line-height: 20px;
+}
+div.filters ul {
+    list-style: none outside none;
+}
+ul.category-filters {
+    list-style: none outside none;
+}
+div.filters {
+    font-size: 85%;
+    text-transform: uppercase;
+}
+li {
+    line-height: 20px;
+}
+.btn-group > .btn, .btn-group > .dropdown-menu, .btn-group > .popover {
+    font-size: 14px;
+}
+.dropdown-menu {
+    list-style: none outside none;
+}
