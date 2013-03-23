@@ -11,11 +11,6 @@ Author Email: caleb@ushahidi.com
 /* Theme Settings
 --------------------*/
   /* Primary Color */
-  h1, a,
-  table.table-list tbody tr td a,
-  .hover .r_details h3 a.r_title,
-  div.footermenu ul li a,
-  div.search-form input.text  { color: #d24836; }
   div.search-form input.text:focus { border-color: #d24836; }
   div.submit-incident a, .btn_submit,
   div.filters ul li a:hover, div.filters ul li a.active,
@@ -42,9 +37,17 @@ h5, h4 {
 }
 
 /* structural divs */
-body#page {  background:url("../images/bg_transparent-lines.png") repeat scroll 0 0 rgba(56, 70, 100, 0.90); }
 
-div#middle { background:#FFF; padding:5px; /*transparent url(../images/bg_top-cap.png) top no-repeat;*/ }
+body#page{
+	background:url("../images/bgScuro.png") repeat scroll 0 0 #313131;
+}
+
+
+div#middle {
+    background: url("../images/transparant-20.png") repeat scroll left top transparent;
+    margin: 5px 0;
+    padding: 0;
+}
 
 .big-block {   }
 .page-main #main { padding:0px; }
@@ -101,7 +104,20 @@ div.search-form input.searchbtn {
 }
 
 /* header */
-div#header { height:auto; margin:0; }
+div#topheader { 
+    background: url("../images/bgScuro.png") repeat scroll 0 0 #313131;
+    margin: 10px 0;
+    padding: 0;
+}
+
+div#header { 
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 10px 10px 0 0;
+    height: auto;
+    margin: 0;
+    padding: 15px 0;
+    text-align: center;
+}
 
 /* logo box */
 div#logo {
@@ -204,7 +220,12 @@ div#right { position:absolute; z-index:1000; }
   
 
 /* home page map */
-div.map { width:auto; border:1px solid #fff; border-top:0; position:relative; }
+div.map {
+    border-image: none;
+    border-style: none solid solid;
+    position: relative;
+    width: auto;
+}
 #mapStatus { width:auto; float:none; overflow:auto; border:1px solid #fff; }
 
 /* home page timeline */
@@ -252,57 +273,39 @@ div.report-additional-reports h5 { font-family: Arial, sans-serif;  }
 .step-1 h2 {
   padding: 0;
 }
+
+
+
 /* footer */
 div#footer {
-  background: #000;
+  background:url("../images/bgScuro.png") repeat scroll 0 0 #313131;
+  padding:0;
 }
+
+
+
+
 div#underfooter { background:transparent; }
 
 
 div.footermenu ul li a {
-  text-transform: uppercase;
-  font-weight: bold;
-  border-left: 1px solid #666;
+    border-left: 1px solid #666666;
+    color: #999;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+	padding:5px !important;
+	border:0 !important;
 }
+
+div.footermenu ul li a:hover {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
+    color: #FAFAFA;
+}
+
+
 .additional-credits {
   margin-top: 18px;
-}
-
-/* button styles */
-a.btn {
-    cursor: pointer;
-    display: inline-block;
-    background-color: #e6e6e6;
-    background-repeat: no-repeat;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
-    background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-    background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
-    background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-    background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-    background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
-    padding: 5px 14px 6px;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    color: #333;
-    font-size: 13px;
-    line-height: normal;
-    border: 1px solid #ccc;
-    border-bottom-color: #bbb;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -webkit-transition: 0.1s linear all;
-    -moz-transition: 0.1s linear all;
-    transition: 0.1s linear all;
-}
-
-a.btn:hover {
-  background-position: 0 -15px;
-  color: #333;
-  text-decoration: none;
 }
 
 span.btn-icon { display:block; position:absolute; height:16px; width:16px; overflow:hidden; text-indent:-234324px; top:6px; right:5px; }
@@ -318,22 +321,12 @@ span.btn-icon { display:block; position:absolute; height:16px; width:16px; overf
     width: auto;
 }
 
-
 #topbar {
-    background: none repeat scroll 0 0 #3A4450;
-    color: #FFFFFF;
-}
-#topbar {
+	background: url("../images/transparant-20.png") repeat scroll left top transparent;
     border: 0 none;
-    height: 30px;
     left: 0;
     margin: 0;
-    padding: 0 3px;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    z-index: 5000;
+    padding: 3px;
 }
 
 #topbar > li {
@@ -441,45 +434,46 @@ span.btn-icon { display:block; position:absolute; height:16px; width:16px; overf
 }
 
 .widget-box {
-    background: none repeat scroll 0 0 #F9F9F9;
-    border-left: 1px solid #CDCDCD;
-    border-right: 1px solid #CDCDCD;
-    border-top: 1px solid #CDCDCD;
-    clear: both;
-    margin-bottom: 16px;
-    margin-top: 0;
-    position: relative;
+    margin: 0;
+    padding: 5px;
 }
 
 
-.widget-title, .modal-header, .table th, div.dataTables_wrapper .ui-widget-header, .ui-dialog .ui-dialog-titlebar {
-    background-color: #EFEFEF;
-    background-image: -moz-linear-gradient(center top , #FDFDFD 0%, #EAEAEA 100%);
-    border-bottom: 1px solid #CDCDCD;
-    height: 36px;
+.widget-title {
+    background: none repeat scroll 0 0 #444444;
+    border-radius: 5px 5px 5px 5px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.modal-header, div.dataTables_wrapper .ui-widget-header, .ui-dialog .ui-dialog-titlebar {
+    background: none repeat scroll 0 0 #CCCCCC;
+    border-radius: 5px 5px 0 0;
+    height: auto;
+    margin-bottom: 5px;
 }
 
 .modal-header {
     padding: 5px 10px;
 }
 
+
 .widget-title span.icon {
-    border-right: 1px solid #CDCDCD;
+    color: #EEEEEE;
     float: left;
-    opacity: 0.7;
-    padding: 9px 10px 7px 11px;
+    font-size: 30px;
+    padding: 5px 10px;
 }
 
 
 .widget-title h5 {
-    color: #666666;
-    float: left;
-    font-size: 12px;
+    color: #EEEEEE;
+    font-family: verdana;
+    font-size: 14px;
     font-weight: bold;
     line-height: 12px;
     margin: 0;
-    padding: 12px;
-    text-shadow: 0 1px 0 #FFFFFF;
+    padding: 4px;
 }
 
 .widget-title .buttons {
@@ -488,12 +482,258 @@ span.btn-icon { display:block; position:absolute; height:16px; width:16px; overf
 }
 
 .widget-content {
-    border-bottom: 1px solid #CDCDCD;
-	padding: 1px 0 0;
+    background: none;
+    padding: 0;
 }
 
 
 .olControlLayerSwitcher .layersDiv {
     background-color: #333333 !important;
     padding: 5px 10px;
+}
+
+.table-dark {
+    margin-bottom: 0;
+}
+
+
+#sidebar {
+    display: block;
+    z-index: 16;
+	background-color:#444444;
+}
+
+#sidebar > ul {
+    border-bottom: 1px solid #4E4E4E;
+    border-top: 1px solid #393939;
+}
+#sidebar > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar > ul > li.active {
+    background-color: #3A3A3A;
+    background-image: -moz-linear-gradient(center top , #333333 0%, #3F3F3F 100%);
+}
+#sidebar > ul > li.active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+    color: #CCCCCC;
+    font-weight: bold;
+    padding: 3px 14px;
+}
+
+#sidebar > ul > li {
+    border-bottom: 1px solid #393939;
+    border-top: 1px solid #4E4E4E;
+    display: block;
+    position: relative;
+	padding: 2px;
+}
+
+
+
+#sidebar > ul > li.active > a {
+    background: url("../img/menu-active.png") no-repeat scroll right center transparent !important;
+}
+#sidebar > ul > li > a {
+    color: #AAAAAA;
+    display: block;
+    padding: 10px 0 10px 15px;
+}
+
+#sidebar > ul li.open ul {
+    display: block;
+}
+#sidebar > ul ul {
+    background-color: #2A2A2A;
+    border-top: 1px solid #4E4E4E;
+}
+#sidebar > ul ul {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+    display: none;
+    margin: 0;
+    padding: 0;
+	list-style: none;
+}
+
+#sidebar > ul ul li:first-child a {
+    border-top: 0 none;
+}
+#sidebar > ul ul li a {
+    border-bottom: 1px solid #202020;
+    border-top: 1px solid #333333;
+}
+#sidebar > ul ul li a {
+    color: #777777;
+    display: block;
+    padding: 10px 0 10px 25px;
+}
+
+
+ul.filter-list li a {
+    margin-bottom: 0;
+}
+
+
+ul.filter-list li a span.item-count {
+    background: none repeat scroll 0 0 #DBDBDB;
+    border-radius: 3px 3px 3px 3px;
+    color: #636363;
+    display: block;
+    padding: 4px 6px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+
+.f-location-box .map {
+    height: 276px !important;
+    margin: 0 0 0 -1px;
+    padding: 0;
+    width: 100% !important;
+}
+
+.f-location-box .rb_location-radius {
+    height: 275px;
+    width: auto;
+}
+
+#rb_list-view {
+    padding: 2px 0 0;
+}
+
+#rb_list-view .rb_report {
+    margin-bottom: 2px;
+}
+
+.link-toggle{
+	margin:0 !important;
+}
+
+
+.pager li > a, .pager li > span {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    display: inline-block;
+    padding: 1px;
+}
+
+.pager li > a, .pager li > span {
+    border: 0;
+    border-radius: 0 0 0 0;
+}
+
+#reports-box {
+	/*float:left;
+	width:auto;*/
+}
+
+
+
+.jquery-bar {
+    background: none repeat scroll 0 0 #AF2424;
+    border-bottom: 3px solid #000;
+    font-size: 14px;
+    padding: 2px 0 0;
+    position: fixed;
+    text-transform: uppercase;
+}
+
+.jquery-bar .notification {
+	display:block;
+	width:auto;
+}
+
+
+.downbar {
+    background: none repeat scroll 0 0 #AF2424;
+    border: 0 none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 5px #333333;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 0 5px;
+    position: fixed;
+    right: 40px;
+    top: 0;
+	z-index:999;
+}
+
+
+
+
+.down {
+    color: #FFFFFF;
+    font-size: 25px;
+    position: absolute;
+    right: 45px;
+    top: 1px;
+}
+
+.up {
+	top: -45px;
+	display: none;
+}
+
+.arrow {
+	cursor:pointer;
+}
+
+
+.font-style {
+  color: #FFFFFF;
+    margin: 5px 0 8px;
+    text-align: center;
+}
+
+.font-style a {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    color: #AF2424;
+    font-size: 20px;
+    padding: 3px 40px;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.font-style a:hover {
+    background: none repeat scroll 0 0 #333;
+    color: #FFFFFF;
+}
+
+
+
+div.footermenu {
+    float: none;
+    margin: 0;
+}
+
+#footer_content {
+    background: url("../images/transparant-20.png") repeat scroll left top transparent;
+    margin: 15px 0;
+    padding: 10px;
+}
+
+.footerFeedBack{
+  	font-weight: bold;
+    padding: 0 5px;
+    text-transform: uppercase;
+}
+
+.table-dark thead th {
+    background: url("../images/bgScuro.png") repeat scroll 0 0 #313131 !important;
+    color: #E5E5E5;
+    vertical-align: bottom;
+}
+
+
+#mapStatus {
+    background-color: #CCCCCC;
+    border: 0 none;
+    color: #333333;
+    font-size: 11px;
 }

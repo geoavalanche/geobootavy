@@ -3,183 +3,109 @@
 <head>
 	<title><?php echo $page_title.$site_name; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css">
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 	<?php echo $header_block; ?>
 	<?php
 		// Action::header_scripts - Additional Inline Scripts from Plugins
 		Event::run('ushahidi_action.header_scripts');
 	?>
-	
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="text/css">
+
+	<link href="<?php echo url::site() ?>themes/madev/css/bootstrap-combined.no-icons.min.css" rel="text/css" >
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-	<link href="../css/bootstrap-overwrite.css" rel="text/css">
-	
-	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-	
+	<link href="<?php echo url::site() ?>themes/madev/css/bootstrap-overwrite.css" rel="text/css">
+	<link href="<?php echo url::site() ?>themes/madev/css/tablecloth.css" rel="stylesheet" type="text/css">
+
+	<script src="<?php echo url::site() ?>themes/madev/js/tablecloth/jquery.tablecloth.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('.tltp').tooltip()
+			$('.tltp').tooltip();
+			
+			// bar notification
+			$('.downbar').show();          
+			$('.jquery-bar').hide();
+			$('.jquery-arrow').click(function(){
+				$('.downbar').toggleClass('up', 500);          
+				if($("#downbar").hasClass("up")) $('#topheader').css("margin-top", "0");
+				else $('#topheader').css("margin-top", "40px");
+				$('.jquery-bar').slideToggle();
+			});    
 		});
 	</script>
 </head>
 
-
 <?php
   // Add a class to the body tag according to the page URI
   // we're on the home page
-  if (count($uri_segments) == 0)
-  {
-    $body_class = "page-main";
-  }
+  if (count($uri_segments) == 0){ $body_class = "page-main"; }
   // 1st tier pages
-  elseif (count($uri_segments) == 1)
-  {
-    $body_class = "page-".$uri_segments[0];
-  }
+  elseif (count($uri_segments) == 1){$body_class = "page-".$uri_segments[0];}
   // 2nd tier pages... ie "/reports/submit"
-  elseif (count($uri_segments) >= 2)
-  {
-    $body_class = "page-".$uri_segments[0]."-".$uri_segments[1];
-  }
-
+  elseif (count($uri_segments) >= 2){$body_class = "page-".$uri_segments[0]."-".$uri_segments[1];}
 ?>
 
 <body id="page" class="<?php echo $body_class; ?>">
 
-
-<ul class="on-click" id="topbar">
-	<li class="pull-left">
-    	<h1 id="topbar-title">
-      		<i class="icon-cogs"></i>
-			<a href="<?php echo url::site();?>"><?php echo $site_name; ?></a>
-    	</h1>
-  	</li>
-  	
-		<!--
-		<a data-toggle="dropdown" href="#">
-		  <i class="icon-user"></i>
-		  <span>John Adminsky</span>
-		</a>
-		<ul class="dropdown-menu">
-		  <li><a href="#">Profile</a></li>
-		  <li><a href="#">Finances</a></li>
-		  <li class="divider"></li>
-		  <li><a href="#">Logout</a></li>
-		</ul>
-		-->
-		<?php if(isset(Auth::instance()->get_user()->id)){ ?>
-			<li class="parent pull-right">
-				<a data-toggle="dropdown" href="#">
-					<i class="icon-user"></i>
-					<span><?php echo htmlentities(Auth::instance()->get_user()->username, ENT_QUOTES, "UTF-8"); ?></span>
-				</a>
-				<ul class="dropdown-menu">
-					<?php if(Auth::instance()->get_user()->dashboard() != ""){ ?>
-						<?php $adminLink = Auth::instance()->get_user()->dashboard(); ?>
-						<li><a href="<?php echo $adminLink;?>/profile"><?php echo Kohana::lang('ui_main.manage_your_account'); ?></a></li>
-						<li><a href="<?php echo $adminLink;?>"><?php echo Kohana::lang('ui_main.your_dashboard'); ?></a></li>
-					<?php } ?>
-					<li><a href="<?php echo url::site();?>profile/user/<?php echo Auth::instance()->get_user()->username; ?>">
-						<?php echo Kohana::lang('ui_main.view_public_profile'); ?></a>
-					</li>
-					<li><a href="<?php echo url::site();?>logout"><em><?php echo Kohana::lang('ui_admin.logout');?></em></a></li>
-				</ul>
-			</li>
-		<?php }else{ ?>
-			<li class="pull-right">
-				<a href="#modalLogin" class="pull-right" data-toggle="modal">
-					<i class="icon-user"></i>
-					<span><?php echo Kohana::lang('ui_main.login'); ?></span>
-				</a>
-			</li>
-		<?php }	?>
-
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-<!--	
-  <li class="parent pull-right">
-    <a data-toggle="dropdown" href="#">
-      <i class="icon-cog"></i>
-      <span>Settings</span>
-    </a>
-    <ul class="dropdown-menu">
-      <li><a href="#">Backend Settings</a></li>
-      <li><a href="#">Frontend Settings</a></li>
-    </ul>
-  </li>-->
-  <!-- <li class="pull-right">
-    <a href="page-login.html">
-      <i class="icon-sign-blank"></i>
-      <span>Sign in</span>
-    </a>
-  </li>-->
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<div class="navbar navbar-inverse navbar-fixed-top" style="margin-top:30px"> <!--navbar-fixed-top-->
-    	<div class="navbar-inner">
-			<!-- SUBMIT INCIDENT -->
-			<div class="pull-left"><?php echo $submit_btn; ?></div>
-			
-			<!-- SEARCH -->	
-			<div class="pull-right">				
-				<form id="formSearch" action="search" class="navbar-search">
-					<div class="input-append">
-						<input name="k" type="text" placeholder="<?php echo Kohana::lang('ui_main.search') ?>" class="search-query span2">
-						<button class="btn btn-inverse" type="button" onclick="javascript:$('#formSearch').submit()">
-							<i class="icon-search"></i>
-						</button>
-					</div>
-				</form>
-			</div>
-    	</div>
+	<div class="jquery-bar navbar navbar-fixed-top">
+		<span class="notification">
+			<p class="font-style">
+				<a href="<?php echo url::site()."reports/submit" ?>"><?php echo Kohana::lang('ui_main.submit'); ?></a><!-- SUBMIT INCIDENT -->
+			</p> 
+			<p class="jquery-arrow down"><i class="icon-circle-arrow-up" style="cursor:pointer;"></i></p>
+		</span>
 	</div>
-	
-	
-	
+	<span id="downbar" class="downbar jquery-arrow"><i class="icon-plus-sign" style="cursor:pointer;"></i></span>
 
-	
-	
-	
+
+
+
+
+
+	<div id="topheader">
+		<div class="container">
+			<div class="row-fluid">
+				<ul id="topbar" class="span12">
+					<li class="pull-left">
+						<a href="<?php echo url::site();?>"><i class="icon-cogs"></i> <?php echo $site_name; ?></a>
+					</li>
+					<li class="pull-right">
+						<!-- LANGUAGE -->
+						<div class="pull-right" style="margin:0 5px"><?php echo $languages;?></div>
+					</li>
+					<?php if(isset(Auth::instance()->get_user()->id)){ ?>
+						<li class="parent pull-right">
+							<a data-toggle="dropdown" href="#">
+								<i class="icon-user"></i>
+								<span><?php echo htmlentities(Auth::instance()->get_user()->username, ENT_QUOTES, "UTF-8"); ?></span>
+							</a>
+							<ul class="dropdown-menu">
+								<?php if(Auth::instance()->get_user()->dashboard() != ""){ ?>
+									<?php $adminLink = Auth::instance()->get_user()->dashboard(); ?>
+									<li><a href="<?php echo $adminLink."/profile";?>"><?php echo Kohana::lang('ui_main.manage_your_account'); ?></a></li>
+									<li><a href="<?php echo $adminLink;?>"><?php echo Kohana::lang('ui_main.your_dashboard'); ?></a></li>
+								<?php } ?>
+								<li><a href="<?php echo url::site();?>profile/user/<?php echo Auth::instance()->get_user()->username; ?>">
+									<?php echo Kohana::lang('ui_main.view_public_profile'); ?></a>
+								</li>
+								<li><a href="<?php echo url::site();?>logout"><em><?php echo Kohana::lang('ui_admin.logout');?></em></a></li>
+							</ul>
+						</li>
+					<?php }else{ ?>
+						<li class="pull-right">
+							<a href="#modalLogin" class="pull-right" data-toggle="modal">
+								<i class="icon-user"></i>
+								<span><?php echo Kohana::lang('ui_main.login'); ?></span>
+							</a>
+						</li>
+					<?php }	?>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
 	<!-- header -->
-	<div class="container" style="margin-top:72px">
+	<div class="container" style="margin-top:5px">
 		<div class="row-fluid">
 			<div id="header" class="span12">
 				<!-- logo -->
@@ -189,7 +115,7 @@
 					<span><?php echo $site_tagline; ?></span>
 				</div>
 				<?php else: ?>
-				<a href="<?php echo url::site();?>"><img src="<?php echo $banner; ?>" alt="<?php echo $site_name; ?>" /></a>
+				<a href="<?php echo url::site();?>"><img src="<?php echo $banner; ?>" alt="<?php echo $site_name; ?>" style="width:90%" /></a>
 				<?php endif; ?>
 				<!-- / logo -->
 				<?php Event::run('ushahidi_action.main_sidebar'); ?>
@@ -197,13 +123,24 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="navbar" style="margin-top:1px">
+		<div class="navbar">
 			<div class="navbar-inner">
 				<ul class="nav">
 					<?php nav::main_tabs($this_page); ?>
 				</ul>
-				<!-- LANGUAGE -->
-				<div class="pull-right" style="margin:0 5px"><?php echo $languages;?></div>
+
+				
+				<!-- SEARCH -->	
+				<div class="pull-right">				
+					<form id="formSearch" action="search" class="navbar-search">
+						<div class="input-append">
+							<input name="k" type="text" placeholder="<?php echo Kohana::lang('ui_main.search') ?>" class="search-query span2">
+							<button class="btn btn-inverse" type="button" onclick="javascript:$('#formSearch').submit()">
+								<i class="icon-search"></i>
+							</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>	

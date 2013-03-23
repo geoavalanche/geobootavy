@@ -1,10 +1,11 @@
 <div class="widget-box">
-	<div class="widget-title">
-		<span class="icon"><i class="icon-map-marker"></i></span>
-		<h5><?php echo Kohana::lang('ui_main.map') ?></h5>
-		<div class="buttons btn-toolbar">
-			<div class="btn-group">
-				<a class="btn btn-mini tltp dropdown-toggle" data-toggle="dropdown" href="#" title="<?php echo Kohana::lang('ui_main.filter_reports_by'); ?>">
+	<div class="widget-title row-fluid">
+		<div class="span8 pull-left">
+			<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map') ?></h5>
+		</div>
+		<div class="buttons btn-toolbar span4">
+			<div class="btn-group pull-right">
+				<a class="btn tltp dropdown-toggle pull-right" data-toggle="dropdown" href="#" title="<?php echo Kohana::lang('ui_main.filter_reports_by'); ?>">
 					<i class="icon-filter"></i> <?php echo Kohana::lang('ui_main.filter_reports_by'); ?>
 				</a>
 				<ul class="dropdown-menu pull-right row-fluid" style="width:300px">
@@ -74,10 +75,10 @@
 						<div class="filters">
 							<span><?php echo Kohana::lang('ui_main.type'); ?></span>
 							<ul>
-								<li><a id="media_0" class="active" href="#"><span><?php echo Kohana::lang('ui_main.reports'); ?></span></a></li>
+								<li><a id="media_0" class="active" href="#"><span><i class="icon-file-alt"></i> <?php echo Kohana::lang('ui_main.reports'); ?></span></a></li>
 								<li><a id="media_4" href="#"><span><?php echo Kohana::lang('ui_main.news'); ?></span></a></li>
-								<li><a id="media_1" href="#"><span><?php echo Kohana::lang('ui_main.pictures'); ?></span></a></li>
-								<li><a id="media_2" href="#"><span><?php echo Kohana::lang('ui_main.video'); ?></span></a></li>
+								<li><a id="media_1" href="#"><span><i class="icon-picture"></i> <?php echo Kohana::lang('ui_main.pictures'); ?></span></a></li>
+								<li><a id="media_2" href="#"><span><i class="icon-film"></i> <?php echo Kohana::lang('ui_main.video'); ?></span></a></li>
 								<li><a id="media_0" href="#"><span><?php echo Kohana::lang('ui_main.all'); ?></span></a></li>
 							</ul>
 							<div class="floatbox">
@@ -91,8 +92,8 @@
 					</li>
 				</ul>
 			</div>
-			<div class="btn-group">			
-				<a class="btn btn-mini tltp" title="<?php echo Kohana::lang('ui_main.how_to_report'); ?>" href="#modalInfoReport" data-toggle="modal">
+			<div class="btn-group pull-right">			
+				<a class="btn tltp" title="<?php echo Kohana::lang('ui_main.how_to_report'); ?>" href="#modalInfoReport" data-toggle="modal">
 					<i class="icon-info-sign"></i>
 				</a>
 			</div>	

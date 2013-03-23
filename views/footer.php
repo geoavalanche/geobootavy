@@ -6,14 +6,13 @@
 	<!-- / wrapper -->
 
 	<!-- footer -->
-	<div class="container">
-		<div class="row-fluid">
-			<div id="footer" class="clearingfix span12">
+	<div id="footer">
 		
-				<div id="underfooter"></div>
-		
+		<div class="container">
+			<div class="row-fluid">
+	
 				<!-- footer content -->
-				<div class="floatholder">
+				<div id="footer_content" class="floatholder">
 		
 					<!-- footer credits -->
 					<div class="footer-credits">
@@ -70,15 +69,16 @@
 					</div>
 					<!-- / footer menu -->
 		
-		
-					<h2 class="feedback_title" style="clear:both">
-						<a href="http://feedback.ushahidi.com/fillsurvey.php?sid=2"><?php echo Kohana::lang('ui_main.feedback'); ?></a>
-					</h2>
-		
-		
+					<div class="row-fluid">
+						<span class="span12">
+							<a class="footerFeedBack" href="http://feedback.ushahidi.com/fillsurvey.php?sid=2">
+								<i class="icon-pencil"></i>	<?php echo Kohana::lang('ui_main.feedback'); ?>
+							</a>
+						</span>
+					</div>
+
 				</div>
 				<!-- / footer content -->
-		
 			</div>
 		</div>
 	</div>

@@ -291,15 +291,11 @@
 <!-- / main body -->
 
 <!-- content -->
-<div class="content-container">
-
+<div>
 	<!-- content blocks -->
-	<div class="content-blocks clearingfix">
-		<ul class="content-column">
-			<?php blocks::render(); ?>
-		</ul>
+	<div class="row-fluid">
+		<?php blocks::render(); ?>
 	</div>
 	<!-- /content blocks -->
-
 </div>
 <!-- content -->
