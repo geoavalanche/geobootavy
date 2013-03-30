@@ -513,10 +513,11 @@
 		// Reset the map loading tracker
 		mapLoaded = 0;
 		
-		var loadingURL = "<?php echo url::file_loc('img').'media/img/loading_g.gif'; ?>";
+		var loadingURL = "";
 		var statusHtml = "<div style=\"width: 100%; margin-top: 100px;\" align=\"center\">" + 
-					"<div><img src=\""+loadingURL+"\" border=\"0\"></div>" + 
-					"<p style=\"padding: 10px 2px;\"><h3><?php echo Kohana::lang('ui_main.loading_reports'); ?>...</h3></p>" +
+					"<p style=\"padding: 10px 2px;\">" +
+					"<h3><i class='icon-spinner icon-spin icon-2x'></i> "+
+					"<?php echo Kohana::lang('ui_main.loading_reports'); ?>...</h3></p>" +
 					"</div>";
 	
 		$("#reports-box1").html(statusHtml);

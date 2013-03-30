@@ -1,15 +1,15 @@
 <div class="span6">
 	<div class="widget-box">
 		<div class="widget-title row-fluid">
-			<div class="span10 pull-left">
+			<div class="pull-left">
 				<h5><i class="icon-rss"></i> <?php echo Kohana::lang('ui_main.official_news');?></h5>
 			</div>
-			<div class="buttons btn-toolbar span2">
-				<div class="btn-group pull-right">
-					<a class="btn tltp" href="<?php echo url::site() . 'feeds' ?>" title="<?php echo Kohana::lang('ui_main.view_more'); ?>">
-						<i class="icon-reorder"></i>
-					</a>
-				</div>
+			<div class="pull-right btn-group">
+				<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
+				<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
+				<a class="btn btn-info tltp" href="<?php echo url::site() . 'feeds' ?>" title="<?php echo Kohana::lang('ui_main.view_more'); ?>">
+					<i class="icon-reorder"></i>
+				</a>
 			</div>
 		</div>
 		<div class="widget-content">

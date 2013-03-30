@@ -5,20 +5,26 @@
 	<div class="widget-box">
 		
 		<div class="widget-title row-fluid">
-			<div class="span10 pull-left">
-				<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.showing_reports_from', array(date('M d, Y', $oldest_timestamp), date('M d, Y', $latest_timestamp))); ?>
+			<div class="pull-left">
+				<h5>
+					<i class="icon-globe"></i> 
+					<?php echo Kohana::lang('ui_main.showing_reports_from', array(date('M d, Y', $oldest_timestamp), date('M d, Y', $latest_timestamp))); ?>
 				</h5>
 			</div>			
 			
-			<div class="buttons btn-toolbar span2">
-				<div class="btn-group pull-right">
-					<a href="#" class="btn-change-time ic-time"><?php echo Kohana::lang('ui_main.change_date_range'); ?></a>
-				</div>
-			</div>
-
-
-					<div id="tooltip-box">
-						<div class="tt-arrow"></div>
+			
+			
+			<div class="pull-right btn-group">
+				<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
+				<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
+				<!-- btn-change-time ic-time -->
+				<a class="btn btn-info tltp dropdown-toggle  ic-time"  data-toggle="dropdown" href="javascript:void(0)" title="<?php echo Kohana::lang('ui_main.change_date_range'); ?>">
+					<i class="icon-calendar"></i>
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li>
+					<div class="tt-arrow"></div>
 						<ul class="inline-links">
 							<li>
 								<a title="<?php echo Kohana::lang('ui_main.all_time'); ?>" class="btn-date-range active" id="dateRangeAll" href="#">
@@ -59,8 +65,62 @@
 								</tr>
 							</table>
 						<?php echo form::close(); ?>
-					</div>
-				</div>
+					</li>
+				</ul>
+			</div>
+			
+			
+			
+			<div id="tooltip-box" style="right:95px !important; left:inherit;">
+				<div class="tt-arrow"></div>
+				<ul class="inline-links">
+					<li>
+						<a title="<?php echo Kohana::lang('ui_main.all_time'); ?>" class="btn-date-range active" id="dateRangeAll" href="#">
+							<?php echo Kohana::lang('ui_main.all_time')?>
+						</a>
+					</li>
+					<li>
+						<a title="<?php echo Kohana::lang('ui_main.today'); ?>" class="btn-date-range" id="dateRangeToday" href="#">
+							<?php echo Kohana::lang('ui_main.today'); ?>
+						</a>
+					</li>
+					<li>
+						<a title="<?php echo Kohana::lang('ui_main.this_week'); ?>" class="btn-date-range" id="dateRangeWeek" href="#">
+							<?php echo Kohana::lang('ui_main.this_week'); ?>
+						</a>
+					</li>
+					<li>
+						<a title="<?php echo Kohana::lang('ui_main.this_month'); ?>" class="btn-date-range" id="dateRangeMonth" href="#">
+							<?php echo Kohana::lang('ui_main.this_month'); ?>
+						</a>
+					</li>
+				</ul>
+				
+				<p class="labeled-divider"><span><?php echo Kohana::lang('ui_main.choose_date_range'); ?>:</span></p>
+				<?php echo form::open(NULL, array('method' => 'get')); ?>
+					<table>
+						<tr>
+							<td><strong>
+								<?php echo Kohana::lang('ui_admin.from')?>:</strong><input id="report_date_from" type="text" style="width:78px" />
+							</td>
+							<td>
+								<strong><?php echo ucfirst(strtolower(Kohana::lang('ui_admin.to'))); ?>:</strong>
+								<input id="report_date_to" type="text" style="width:78px" />
+							</td>
+							<td valign="bottom">
+								<a href="#" id="applyDateFilter" class="filter-button" style="position:static;"><?php echo Kohana::lang('ui_main.go')?></a>
+							</td>
+						</tr>
+					</table>
+				<?php echo form::close(); ?>
+			</div>
+			
+			
+			
+			
+			
+			
+		</div>
 
 
 
@@ -70,7 +130,7 @@
 
 
 		<div class="widget-content">
-			<div style="overflow:auto;" class="row-fluid">
+			<div class="row-fluid">
 				
 				<!-- reports-box -->
 				<div id="reports-box1" class="span9" style="padding:10px 0 10px 5px">
