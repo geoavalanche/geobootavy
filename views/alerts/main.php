@@ -5,8 +5,12 @@
 		<!-- start block -->
 		<div class="widget-box">
 			<div class="widget-title row-fluid">
-				<div class="span12 pull-left">
+				<div class="pull-left">
 					<h5><i class="icon-cloud"></i> <?php echo Kohana::lang('ui_main.alerts_get'); ?></h5>
+				</div>
+				<div class="pull-right btn-group">
+					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
+					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>
 			

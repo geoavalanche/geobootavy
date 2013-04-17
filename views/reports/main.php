@@ -11,144 +11,41 @@
 					<?php echo Kohana::lang('ui_main.showing_reports_from', array(date('M d, Y', $oldest_timestamp), date('M d, Y', $latest_timestamp))); ?>
 				</h5>
 			</div>			
-			
-			
-			
 			<div class="pull-right btn-group">
 				<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
 				<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
-				<!-- btn-change-time ic-time -->
-				<a class="btn btn-info tltp dropdown-toggle  ic-time"  data-toggle="dropdown" href="javascript:void(0)" title="<?php echo Kohana::lang('ui_main.change_date_range'); ?>">
-					<i class="icon-calendar"></i>
-					<span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu">
-					<li>
-					<div class="tt-arrow"></div>
-						<ul class="inline-links">
-							<li>
-								<a title="<?php echo Kohana::lang('ui_main.all_time'); ?>" class="btn-date-range active" id="dateRangeAll" href="#">
-									<?php echo Kohana::lang('ui_main.all_time')?>
-								</a>
-							</li>
-							<li>
-								<a title="<?php echo Kohana::lang('ui_main.today'); ?>" class="btn-date-range" id="dateRangeToday" href="#">
-									<?php echo Kohana::lang('ui_main.today'); ?>
-								</a>
-							</li>
-							<li>
-								<a title="<?php echo Kohana::lang('ui_main.this_week'); ?>" class="btn-date-range" id="dateRangeWeek" href="#">
-									<?php echo Kohana::lang('ui_main.this_week'); ?>
-								</a>
-							</li>
-							<li>
-								<a title="<?php echo Kohana::lang('ui_main.this_month'); ?>" class="btn-date-range" id="dateRangeMonth" href="#">
-									<?php echo Kohana::lang('ui_main.this_month'); ?>
-								</a>
-							</li>
-						</ul>
-						
-						<p class="labeled-divider"><span><?php echo Kohana::lang('ui_main.choose_date_range'); ?>:</span></p>
-						<?php echo form::open(NULL, array('method' => 'get')); ?>
-							<table>
-								<tr>
-									<td><strong>
-										<?php echo Kohana::lang('ui_admin.from')?>:</strong><input id="report_date_from" type="text" style="width:78px" />
-									</td>
-									<td>
-										<strong><?php echo ucfirst(strtolower(Kohana::lang('ui_admin.to'))); ?>:</strong>
-										<input id="report_date_to" type="text" style="width:78px" />
-									</td>
-									<td valign="bottom">
-										<a href="#" id="applyDateFilter" class="filter-button" style="position:static;"><?php echo Kohana::lang('ui_main.go')?></a>
-									</td>
-								</tr>
-							</table>
-						<?php echo form::close(); ?>
-					</li>
-				</ul>
 			</div>
-			
-			
-			
-			<div id="tooltip-box" style="right:95px !important; left:inherit;">
-				<div class="tt-arrow"></div>
-				<ul class="inline-links">
-					<li>
-						<a title="<?php echo Kohana::lang('ui_main.all_time'); ?>" class="btn-date-range active" id="dateRangeAll" href="#">
-							<?php echo Kohana::lang('ui_main.all_time')?>
-						</a>
-					</li>
-					<li>
-						<a title="<?php echo Kohana::lang('ui_main.today'); ?>" class="btn-date-range" id="dateRangeToday" href="#">
-							<?php echo Kohana::lang('ui_main.today'); ?>
-						</a>
-					</li>
-					<li>
-						<a title="<?php echo Kohana::lang('ui_main.this_week'); ?>" class="btn-date-range" id="dateRangeWeek" href="#">
-							<?php echo Kohana::lang('ui_main.this_week'); ?>
-						</a>
-					</li>
-					<li>
-						<a title="<?php echo Kohana::lang('ui_main.this_month'); ?>" class="btn-date-range" id="dateRangeMonth" href="#">
-							<?php echo Kohana::lang('ui_main.this_month'); ?>
-						</a>
-					</li>
-				</ul>
-				
-				<p class="labeled-divider"><span><?php echo Kohana::lang('ui_main.choose_date_range'); ?>:</span></p>
-				<?php echo form::open(NULL, array('method' => 'get')); ?>
-					<table>
-						<tr>
-							<td><strong>
-								<?php echo Kohana::lang('ui_admin.from')?>:</strong><input id="report_date_from" type="text" style="width:78px" />
-							</td>
-							<td>
-								<strong><?php echo ucfirst(strtolower(Kohana::lang('ui_admin.to'))); ?>:</strong>
-								<input id="report_date_to" type="text" style="width:78px" />
-							</td>
-							<td valign="bottom">
-								<a href="#" id="applyDateFilter" class="filter-button" style="position:static;"><?php echo Kohana::lang('ui_main.go')?></a>
-							</td>
-						</tr>
-					</table>
-				<?php echo form::close(); ?>
-			</div>
-			
-			
-			
-			
-			
-			
 		</div>
-
-
-
-
-
-
-
 
 		<div class="widget-content">
 			<div class="row-fluid">
 				
 				<!-- reports-box -->
-				<div id="reports-box1" class="span9" style="padding:10px 0 10px 5px">
-					<?php echo $report_listing_view; ?>
-				</div>
+				<div id="reports-box1" class="span9"> <?php echo $report_listing_view; ?> </div>
 				<!-- end #reports-box -->
 
 
+				<div id="sidebar" class="span3">					
 
-<!-- filters-box -->
-				<div class="span3" style="padding:10px 5px 10px 0">
-					
-					<div id="sidebar">
-						<ul style="display: block;">
+						<!-- filters-box -->
+						<div class="actionFilter">
+							<a href="javascript:void(0)" id="applyFilters" class="btn btn-danger"><?php echo Kohana::lang('ui_main.filter_reports'); ?></a>
+							<a href="javascript:void(0)" id="reset_all_filters" class="btn btn-inverse"><?php echo Kohana::lang('ui_main.reset_all_filters'); ?></a> 
+						</div>
+						
+						
+						<ul>
 							<li class="active"><i class="icon icon-filter"></i> <?php echo Kohana::lang('ui_main.filter_reports_by'); ?></li>
 							
+							
+							
 							<li class="submenu">
-								<a href="#"><i class="icon icon-th-list"></i> <span><?php echo Kohana::lang('ui_main.category')?></span></a>
+								<a href="#"><i class="icon-th-list"></i> <?php echo Kohana::lang('ui_main.category')?></a>
+								<div style="position: relative; float: right; top: -31px; right: 40px; width:0">
+									<a class="btn btn-info tltp" href="javascript:void(0)" onclick="removeParameterKey('c', 'fl-categories');" title="<?php echo Kohana::lang('ui_main.clear')?>">
+										<i class="icon-remove-sign"></i>
+									</a>
+								</div>
 								<ul class="filter-list fl-categories" id="category-filter-list">
 									<li>
 										<a href="#"><?php
@@ -169,17 +66,67 @@
 								</ul>
 							</li>
 							
+							
+							
+							
+							
 							<li class="submenu">
-								<a class="f-title" href="#"><i class="icon icon-globe"></i> <span><?php echo Kohana::lang('ui_main.location'); ?></span></a>
+								<a href="#"><i class="icon icon-calendar"></i> <?php echo Kohana::lang('ui_main.change_date_range'); ?></a>
 								<ul>
 									<li>
-										<div class="f-location-box"><?php echo $alert_radius_view; ?></div>
+										<a title="<?php echo Kohana::lang('ui_main.all_time'); ?>" class="btn-date-range active" id="dateRangeAll" href="#">
+											<?php echo Kohana::lang('ui_main.all_time')?>
+										</a>
+										<a title="<?php echo Kohana::lang('ui_main.today'); ?>" class="btn-date-range" id="dateRangeToday" href="#">
+											<?php echo Kohana::lang('ui_main.today'); ?>
+										</a>
+										<a title="<?php echo Kohana::lang('ui_main.this_week'); ?>" class="btn-date-range" id="dateRangeWeek" href="#">
+											<?php echo Kohana::lang('ui_main.this_week'); ?>
+										</a>
+										<a title="<?php echo Kohana::lang('ui_main.this_month'); ?>" class="btn-date-range" id="dateRangeMonth" href="#">
+											<?php echo Kohana::lang('ui_main.this_month'); ?>
+										</a>
+										
+										<p class="labeled-divider"><span><?php echo Kohana::lang('ui_main.choose_date_range'); ?>:</span></p>
+										<?php echo form::open(NULL, array('method' => 'get')); ?>
+											<strong><?php echo Kohana::lang('ui_admin.from')?>:</strong>
+											<input id="report_date_from" type="text" style="width:78px" />
+											<strong><?php echo ucfirst(strtolower(Kohana::lang('ui_admin.to'))); ?>:</strong>
+											<input id="report_date_to" type="text" style="width:78px" />
+											<a href="#" id="applyDateFilter" class="filter-button" style="position:static;"><?php echo Kohana::lang('ui_main.go')?></a>
+										<?php echo form::close(); ?>
 									</li>
 								</ul>
 							</li>
 							
+							
+							
 							<li class="submenu">
-								<a class="f-title" href="#"><i class="icon icon-random"></i> <span><?php echo Kohana::lang('ui_main.type')?></span></a>
+								<a href="#" onclick="startLocation()"><i class="icon icon-globe"></i> <?php echo Kohana::lang('ui_main.location'); ?></a>
+								<ul>
+									<li>
+										<div class="f-location-box">
+											<?php echo $alert_radius_view; ?>
+											<p></p>
+										</div>
+									</li>
+								</ul>
+							</li>
+							
+							
+							
+							
+							
+							
+							
+							
+							<li class="submenu">
+								<a href="#"><i class="icon icon-random"></i> <?php echo Kohana::lang('ui_main.type')?></a>
+								<div style="position: relative; float: right; top: -31px; right: 40px; width:0">
+									<a class="btn btn-info tltp" href="javascript:void(0)" onclick="removeParameterKey('mode', 'fl-incident-mode')" title="<?php echo Kohana::lang('ui_main.clear')?>">
+										<i class="icon-remove-sign"></i>
+									</a>
+								</div>	
 								<ul class="filter-list fl-incident-mode">
 									<li>
 										<a href="#" id="filter_link_mode_1">
@@ -205,8 +152,17 @@
 								</ul>
 							</li>
 							
+							
+							
+							
+							
 							<li class="submenu">
-								<a class="f-title" href="#"><i class="icon icon-desktop"></i> <span><?php echo Kohana::lang('ui_main.media');?></span></a>
+								<a href="#"><i class="icon icon-desktop"></i> <?php echo Kohana::lang('ui_main.media');?></a>
+								<div style="position: relative; float: right; top: -31px; right: 40px; width:0">
+									<a class="btn btn-info tltp" href="javascript:void(0)" onclick="removeParameterKey('m', 'fl-media');" title="<?php echo Kohana::lang('ui_main.clear')?>">
+										<i class="icon-remove-sign"></i>
+									</a>
+								</div>	
 								<ul class="filter-list fl-media">
 									<li>
 										<a href="#" id="filter_link_media_1">
@@ -229,8 +185,17 @@
 								</ul>
 							</li>
 							
+							
+							
+							
+							
 							<li class="submenu">
-								<a class="f-title" href="#"><i class="icon icon-check"></i> <span><?php echo Kohana::lang('ui_main.verification'); ?></span></a>
+								<a href="#"><i class="icon icon-check"></i> <?php echo Kohana::lang('ui_main.verification'); ?></a>
+								<div style="position: relative; float: right; top: -31px; right: 40px; width:0">
+									<a class="btn btn-info tltp" href="javascript:void(0)" onclick="removeParameterKey('v', 'fl-verification');" title="<?php echo Kohana::lang('ui_main.clear')?>">
+										<i class="icon-remove-sign"></i>
+									</a>
+								</div>	
 								<ul class="filter-list fl-verification">
 									<li>
 										<a href="#" id="filter_link_verification_1">
@@ -248,7 +213,12 @@
 							</li>
 							
 							<li class="submenu">
-								<a class="f-title" href="#"><i class="icon icon-magic"></i> <span><?php echo Kohana::lang('ui_main.custom_fields'); ?></span></a>
+								<a href="#"><i class="icon icon-magic"></i> <?php echo Kohana::lang('ui_main.custom_fields'); ?></a>
+								<div style="position: relative; float: right; top: -31px; right: 40px; width:0">
+									<a class="btn btn-info tltp" href="javascript:void(0)" onclick="removeParameterKey('cff', 'fl-customFields');" title="<?php echo Kohana::lang('ui_main.clear')?>">
+										<i class="icon-remove-sign"></i>
+									</a>
+								</div>	
 								<ul>
 									<li><div class="f-customFields-box"><?php echo $custom_forms_filter; ?></div></li>
 								</ul>
@@ -256,164 +226,13 @@
 							
 						</ul>
 					</div>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					<b><?php echo Kohana::lang('ui_main.filter_reports_by'); ?></b>
-					<div id="accordion">
-						
-						
-						<h3>
-							<a href="#" class="small-link-button f-clear reset" onclick="removeParameterKey('c', 'fl-categories');"><?php echo Kohana::lang('ui_main.clear')?></a>
-							<a class="f-title" href="#"><?php echo Kohana::lang('ui_main.category')?></a>
-						</h3>
-						<div class="f-category-box">
-							<ul class="filter-list fl-categories" id="category-filter-list">
-								<li>
-									<a href="#"><?php
-									$all_cat_image = '&nbsp';
-									$all_cat_image = '';
-									if($default_map_all_icon != NULL) {
-										$all_cat_image = html::image(array('src'=>$default_map_all_icon));
-									}
-									?>
-									<span class="item-swatch" style="background-color: #<?php echo Kohana::config('settings.default_map_all'); ?>"><?php echo $all_cat_image ?></span>
-									<span class="item-title"><?php echo Kohana::lang('ui_main.all_categories'); ?></span>
-									<span class="item-count" id="all_report_count"><?php echo $report_stats->total_reports; ?></span>
-									</a>
-								</li>
-								<?php echo $category_tree_view; ?>
-							</ul>
-						</div>
-						
-						<h3>	
 
-							<a class="f-title" href="#"><?php echo Kohana::lang('ui_main.location'); ?></a></h3>
-						<div class="f-location-box">
-							
-						</div>
-						
-						<h3>
-							<a href="#" class="small-link-button f-clear reset" onclick="removeParameterKey('mode', 'fl-incident-mode');">
-								<?php echo Kohana::lang('ui_main.clear')?>
-							</a>
-							<a class="f-title" href="#"><?php echo Kohana::lang('ui_main.type')?></a>
-						</h3>
-						<div class="f-type-box">
-							<ul class="filter-list fl-incident-mode">
-								<li>
-									<a href="#" id="filter_link_mode_1">
-										<span class="item-icon ic-webform">&nbsp;</span>
-										<span class="item-title"><?php echo Kohana::lang('ui_main.web_form'); ?></span>
-									</a>
-								</li>
-							
-							<?php foreach ($services as $id => $name): ?>
-								<?php
-									$item_class = "";
-									if ($id == 1) $item_class = "ic-sms";
-									if ($id == 2) $item_class = "ic-email";
-									if ($id == 3) $item_class = "ic-twitter";
-								?>
-								<li>
-									<a href="#" id="filter_link_mode_<?php echo ($id + 1); ?>">
-										<span class="item-icon <?php echo $item_class; ?>">&nbsp;</span>
-										<span class="item-title"><?php echo $name; ?></span>
-									</a>
-								</li>
-							<?php endforeach; ?>
-
-							</ul>
-						</div>
-						
-						<h3>
-							<a href="#" class="small-link-button f-clear reset" onclick="removeParameterKey('m', 'fl-media');"><?php echo Kohana::lang('ui_main.clear')?></a>
-							<a class="f-title" href="#"><?php echo Kohana::lang('ui_main.media');?></a>
-						</h3>
-						<div class="f-media-box">
-							<p><?php echo Kohana::lang('ui_main.filter_reports_contain'); ?>&hellip;</p>
-							<ul class="filter-list fl-media">
-								<li>
-									<a href="#" id="filter_link_media_1">
-										<span class="item-icon ic-photos">&nbsp;</span>
-										<span class="item-title"><?php echo Kohana::lang('ui_main.photos'); ?></span>
-									</a>
-								</li>
-								<li>
-									<a href="#" id="filter_link_media_2">
-										<span class="item-icon ic-videos">&nbsp;</span>
-										<span class="item-title"><?php echo Kohana::lang('ui_main.video'); ?></span>
-									</a>
-								</li>
-								<li>
-									<a href="#" id="filter_link_media_4">
-										<span class="item-icon ic-news">&nbsp;</span>
-										<span class="item-title"><?php echo Kohana::lang('ui_main.reports_news')?></span>
-									</a>
-								</li>
-							</ul>
-						</div>
-						
-						<h3>
-							<a href="#" class="small-link-button f-clear reset" onclick="removeParameterKey('v', 'fl-verification');">
-								<?php echo Kohana::lang('ui_main.clear'); ?>
-							</a>
-							<a class="f-title" href="#"><?php echo Kohana::lang('ui_main.verification'); ?></a>
-						</h3>
-						<div class="f-verification-box">
-							<ul class="filter-list fl-verification">
-								<li>
-									<a href="#" id="filter_link_verification_1">
-										<span class="item-icon ic-verified">&nbsp;</span>
-										<span class="item-title"><?php echo Kohana::lang('ui_main.verified'); ?></span>
-									</a>
-								</li>
-								<li>
-									<a href="#" id="filter_link_verification_0">
-										<span class="item-icon ic-unverified">&nbsp;</span>
-										<span class="item-title"><?php echo Kohana::lang('ui_main.unverified'); ?></span>
-									</a>
-								</li>
-								
-							</ul>
-						</div>
-						<h3>
-							<a href="#" class="small-link-button f-clear reset" onclick="removeParameterKey('cff', 'fl-customFields');">
-								<?php echo Kohana::lang('ui_main.clear'); ?>
-							</a>
-							<a class="f-title" href="#"><?php echo Kohana::lang('ui_main.custom_fields'); ?></a>
-						</h3>
-						<div class="f-customFields-box">
-							<?php echo $custom_forms_filter; ?>
-							
-						</div>
-						<?php
-							// Action, allows plugins to add custom filters
-							Event::run('ushahidi_action.report_filters_ui');
-						?>
-					</div>
-					<!-- end #accordion -->
-					
-					<div id="filter-controls">
-						<p>
-							<a href="#" class="small-link-button reset" id="reset_all_filters"><?php echo Kohana::lang('ui_main.reset_all_filters'); ?></a> 
-							<a href="#" id="applyFilters" class="filter-button"><?php echo Kohana::lang('ui_main.filter_reports'); ?></a>
-						</p>
-					</div>          
-				</div>
-				<!-- end #filters-box -->
-				
-				
+			<!--
+			<div class="actionFilter pull-right">
+				<a href="javascript:void(0)" id="applyFilters" class="btn btn-danger"><?php echo Kohana::lang('ui_main.filter_reports'); ?></a>
+				<a href="javascript:void(0)" id="reset_all_filters" class="btn btn-inverse"><?php echo Kohana::lang('ui_main.reset_all_filters'); ?></a> 
 			</div>
+			-->
       
 			<div style="display:none">
 				<?php
