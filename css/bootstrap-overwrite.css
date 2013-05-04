@@ -308,3 +308,8 @@ ul, ol {
     margin: 0;
     padding: 0;
 }
+
+
+.btn-info {
+    background-color: #3A5266;
+}

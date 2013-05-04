@@ -3,15 +3,17 @@
 <head>
 	<title><?php echo $page_title.$site_name; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-	<link href="<?php echo url::site().'themes/madev/css/dynatree/skin-vista/ui.dynatree.css' ?>" rel="stylesheet" type="text/css">
-	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+	
 	<?php echo $header_block; ?>
 	<?php Event::run('ushahidi_action.header_scripts'); // Action::header_scripts - Additional Inline Scripts from Plugins ?>
-	<link href="<?php echo url::site().'themes/madev/css/bootstrap-combined.no-icons.min.css' ?>" rel="text/css" >
+	
+	<link href="<?php echo url::site().'themes/madev/css/dynatree/skin-vista/ui.dynatree.css' ?>" rel="stylesheet" type="text/css">
+	<link href="<?php echo url::site().'themes/madev/css/bootstrap-combined.no-icons.min.css' ?>"  rel="stylesheet" type="text/css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-	<link href="<?php echo url::site().'themes/madev/css/bootstrap-overwrite.css' ?>" rel="text/css">
+	<link href="<?php echo url::site().'themes/madev/css/bootstrap-overwrite.css' ?>"  rel="stylesheet" type="text/css">
 	<link href="<?php echo url::site().'themes/madev/css/tablecloth.css' ?>" rel="stylesheet" type="text/css">
+
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 	<script src="<?php echo url::site().'themes/madev/js/tablecloth/jquery.tablecloth.js' ?>" type="text/javascript"></script>
 	<script src="<?php echo url::site().'themes/madev/js/jquery.dynatree.min.js' ?>" type="text/javascript"></script>
 	
