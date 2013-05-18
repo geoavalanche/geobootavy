@@ -77,7 +77,7 @@ function smartColumns() {
 /**
  * Callback function for rendering the timeline
  */
-function refreshTimeline() {
+function refreshTimeline(options) {
 
 	<?php if (Kohana::config('settings.enable_timeline')) {?>
 
@@ -107,51 +107,53 @@ function refreshTimeline() {
 		url: url,
 		data: options,
 		success: function(response) {
-			// Clear out the any existing plots
-			$("#graph").html('');
-
-			if (response != null && response[0].data.length < 2)
-				return;
-
-			var graphData = [];
-			var raw = response[0].data;
-			for (var i=0; i<raw.length; i++) {
-				var date = new Date(raw[i][0]);
-
-				var dateStr = date.getFullYear() + "-";
-				dateStr += (date.getMonth() < 10) ? "0" : "";
-				dateStr += (date.getMonth() +1) + "-" ;
-				dateStr += (date.getDate() < 10) ? "0" : "";
-				dateStr += date.getDate();
-
-				graphData.push([dateStr, parseInt(raw[i][1])]);
-			}
-			var timeline = $.jqplot('graph', [graphData], {
-				seriesDefaults: {
-					color: response[0].color,
-					lineWidth: 1.6,
-					markerOptions: {
-						show: false
+			$.each(response[0].data, function(iInterval, interval){
+				interval[1] = parseInt(interval[1]);
+			});
+			
+			$('#graph').highcharts({
+				chart: {
+					type: 'line',
+					zoomType: 'x'
+				},
+				title: {
+					text: 'Crowdsourced Snow Avalanche Information '
+				},
+				subtitle: {
+					text: 'The chart shows the number of reports loaded over the years'
+				},
+				xAxis: {
+					type: 'datetime',
+					dateTimeLabelFormats: { // don't display the dummy year
+						month: '%e %b %Y',
+						year: '%e %b %Y'
 					}
 				},
-				axesDefaults: {
-					pad: 1.23,
-				},
-				axes: {
-					xaxis: {
-						renderer: $.jqplot.DateAxisRenderer,
-						tickOptions: {
-							formatString: '%#d&nbsp;%b\n%Y'
-						}
+				yAxis: {
+					title: {
+						text: ''
 					},
-					yaxis: {
-						min: 0,
-						tickOptions: {
-							formatString: '%.0f'
+					min: 0
+				},
+				tooltip: {
+					formatter: function() {
+						return "<b>" + this.y + " REPORT</b><br />" +  Highcharts.dateFormat('%e %b %Y', this.x);
+					}
+				},
+				plotOptions: {
+					series: {
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 7
 						}
 					}
 				},
-				cursor: {show: false}
+				legend: {enabled:false},
+				series: [{
+					name: '',
+					data: response[0].data
+				}]
 			});
 		},
 		dataType: "json"

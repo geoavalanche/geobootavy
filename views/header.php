@@ -14,6 +14,8 @@
 	<link href="<?php echo url::site().'themes/madev/css/tablecloth.css' ?>" rel="stylesheet" type="text/css">
 
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+	<script src="<?php echo url::site().'themes/madev/js/highchart/highcharts.js' ?>" type="text/javascript"></script>
+	<!--script src="<?php echo url::site().'themes/madev/js/highchart/themes/gray.js' ?>" type="text/javascript"></script-->
 	<script src="<?php echo url::site().'themes/madev/js/tablecloth/jquery.tablecloth.js' ?>" type="text/javascript"></script>
 	<script src="<?php echo url::site().'themes/madev/js/jquery.dynatree.min.js' ?>" type="text/javascript"></script>
 	
