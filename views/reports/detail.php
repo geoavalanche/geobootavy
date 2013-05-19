@@ -2,20 +2,15 @@
 <div id="main" class="report_detail row-fluid">
 	<div class="span7">
   		<div class="widget-box">
-			<div class="widget-title row-fluid">
-				<div class="pull-left">
-					<h5><i class="icon-credit-card"></i> 
-						<?php echo htmlentities($incident_title, ENT_QUOTES, "UTF-8"); ?>
-					</h5>
-				</div>
-				<div class="pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
-					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
+			<div class="widget-title">
+				<h5><i class="icon-credit-card"></i> <?php echo htmlentities($incident_title, ENT_QUOTES, "UTF-8"); ?></h5>
+				<div class="widget-toolbar pull-right btn-group">
+					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
+					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>
+			
 			<div class="widget-content">
-		
-		
 				<?php echo htmlentities($incident_title, ENT_QUOTES, "UTF-8");
 					// If Admin is Logged In - Allow For Edit Link
 					if ($logged_in){
@@ -188,13 +183,11 @@
 	<div class="span5">
 
 		<div class="widget-box">
-			<div class="widget-title row-fluid">
-				<div class="pull-left">
-					<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map');?></h5>
-				</div>
-				<div class="pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
-					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
+			<div class="widget-title">
+				<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map');?></h5>
+				<div class="widget-toolbar pull-right btn-group">
+					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
+					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>
 			<div class="widget-content">
@@ -212,13 +205,11 @@
 		?>
 		
 		<div class="widget-box">
-			<div class="widget-title row-fluid">
-				<div class="pull-left">
-					<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.additional_reports');?></h5>
-				</div>
-				<div class="pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
-					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
+			<div class="widget-title">
+				<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.additional_reports');?></h5>
+				<div class="widget-toolbar pull-right btn-group">
+					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
+					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>
 			<div class="widget-content">

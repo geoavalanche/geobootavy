@@ -1,15 +1,13 @@
 <div class="span6">
 	<div class="widget-box">
-		<div class="widget-title row-fluid">
-			<div class="pull-left">
-				<h5><i class="icon-credit-card"></i> <?php echo Kohana::lang('ui_main.reports_listed');?></h5>
-			</div>
-			<div class="pull-right btn-group">
-				<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
-				<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
-				<a class="btn btn-info tltp" href="<?php echo url::site() . 'reports/' ?>" title="<?php echo Kohana::lang('ui_main.view_more'); ?>">
+		<div class="widget-title">
+			<h5><i class="icon-credit-card"></i> <?php echo Kohana::lang('ui_main.reports_listed');?></h5>
+			<div class="widget-toolbar pull-right btn-group">
+				<a class="btn btn-inverse tltp" href="<?php echo url::site() . 'reports/' ?>" title="<?php echo Kohana::lang('ui_main.view_more'); ?>">
 					<i class="icon-reorder"></i>
 				</a>
+				<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
+				<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 			</div>
 		</div>
 		<div class="widget-content">

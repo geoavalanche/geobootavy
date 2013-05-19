@@ -221,8 +221,7 @@ div#right { position:absolute; z-index:1000; }
 
 /* home page map */
 div.map {
-    border-image: none;
-    border-style: none solid solid;
+    border:0;
     position: relative;
     width: auto;
 }
@@ -440,20 +439,6 @@ span.btn-icon { display:block; position:absolute; height:16px; width:16px; overf
     white-space: normal;
 }
 
-.widget-box {
-    padding: 5px 5px 0;
-}
-
-
-.widget-title {
-    background: linear-gradient(to bottom, #547893, #22313D) repeat scroll 0 0 transparent;
-    border-radius: 5px 5px 5px 5px;
-    height: auto;
-    margin-bottom: 0;
-	padding:2px 0;
-	border: 1px solid #000000;
-}
-
 .modal-header, div.dataTables_wrapper .ui-widget-header, .ui-dialog .ui-dialog-titlebar {
     background: none repeat scroll 0 0 #eee;
     border-radius: 5px 5px 0 0;
@@ -466,39 +451,43 @@ span.btn-icon { display:block; position:absolute; height:16px; width:16px; overf
 }
 
 
-.widget-title span.icon {
-    color: #EEEEEE;
-    float: left;
-    font-size: 30px;
-    padding: 5px 10px;
+.widget-box {
+    padding: 5px 5px 0;
 }
 
+
+.widget-title {
+    background: none repeat scroll 0 0 #444444;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 5px;
+    min-height: 38px;
+    padding-left: 3px;
+    position: relative;
+}
 
 .widget-title h5 {
-	color: #EEEEEE;
-    font-family: verdana;
-    font-size: 13px;
-    line-height: 13px;
+    color: #EEEEEE;
+    float: left;
+    font-size: 16px;
+    line-height: 36px;
     margin: 0;
-    padding: 4px;
+    padding-left: 5px;
+    text-align: left;
+    text-rendering: optimizelegibility;
 }
 
-.widget-title i {
-  	color: #DEE8FC;
-    font-size: 14px;
-}
-
-.widget-title .buttons {
-    float: right;
-    margin: 4px 4px 0 0;
+.widget-toolbar {
+    display: inline-block;
+    line-height: 37px;
+    padding: 5px;
+    position: relative;
+    text-align: left;
 }
 
 .widget-content {
-    color: #DDDDDD;
-    font-family: verdana;
-    font-size: 12px;
-    margin-top: 5px;
-    padding: 1px 5px;
+    background-color: transparent;
+    border: 0 none;
+	color:#ccc !important;
 }
 
 
@@ -815,20 +804,20 @@ div.graph-holder {
 }
 
 .ui-widget-content {
-    background: none repeat scroll 0 0 #D86363;
+    background: none repeat scroll 0 0 #fff;
     border: 1px solid #000000;
-    color: #FFF;
+    color: #333;
 }
 
 
 .ui-slider dt span {
-    background: none repeat scroll 0 0 #D86363;
-    color: #FFF;
+	background: none repeat scroll 0 0 #DDDF0D;
+    color: #333333;
     padding: 0 0.5em;
 }
 
 .ui-widget-header {
-    background: none repeat scroll 0 0 #9F1817;
+    background: none repeat scroll 0 0 #DDDF0D;
     border: 1px solid #AAAAAA;
     color: #FFF;
     font-weight: bold;
@@ -1043,9 +1032,51 @@ div.r_description {
 }
 
 .step-1 .map-wrapper {
-    border: 1px solid #999999;
+	background: none repeat scroll 0 0 #EEEEEE;
+    border: 0 none;
+    border-radius: 10px 10px 0 0;
     margin: 10px 0 0;
     overflow: hidden;
     padding: 10px;
     width: auto;
+}
+
+
+.report_row h4 {
+    color: #CCCCCC;
+}
+
+
+.treeview .expandable-hitarea {
+    background-position: -80px -3px;
+}
+.treeview .hitarea {
+    margin-top: 5px;
+	height:12px;
+}
+
+
+.report_category ul li label {
+    color: #ccc;
+}
+
+.treeview .hitarea {
+    background: url("../images/tree-icon.png") no-repeat scroll -81px -3px transparent;
+}
+
+.treeview .expandable-hitarea {
+    background: url("../images/tree-icon.png") no-repeat scroll -81px -3px transparent;
+}
+
+.treeview .collapsable-hitarea {
+    background: url("../images/tree-icon.png") no-repeat scroll -64px -25px transparent;
+}
+
+
+.report-find-location {
+    background-color: #EEEEEE;
+    color: #666666;
+    padding: 10px 9px 9px;
+	border:0;
+	margin:0;
 }

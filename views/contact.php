@@ -2,13 +2,11 @@
 	<div class="content-bg">
 		
 		<div class="widget-box">
-			<div class="widget-title row-fluid">
-				<div class="pull-left">
-					<h5><i class="icon-envelope"></i> <?php echo Kohana::lang('ui_main.contact'); ?></h5>
-				</div>
-				<div class="pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
-					<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
+			<div class="widget-title">
+				<h5><i class="icon-envelope"></i> <?php echo Kohana::lang('ui_main.contact'); ?></h5>
+				<div class="widget-toolbar pull-right btn-group">
+					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
+					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>
 			

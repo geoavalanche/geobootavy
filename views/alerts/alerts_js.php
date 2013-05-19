@@ -104,14 +104,15 @@ jQuery(function($) {
 	});
 
 	// Category treeview
-    /*$(".category-column").treeview({
+    $(".category-column").treeview({
       persist: "location",
 	  collapsed: true,
 	  unique: false
-	});*/
+	});
 	
+	/*
 	$("#treeCategory").dynatree();
-	  
+	*/ 
 	  
 	  
 	  

@@ -280,11 +280,11 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 
 legend {
-    border-color: #AF2424;
+    border-color: #FFFFFF;
     border-image: none;
     border-style: none none solid;
-    border-width: 0 0 3px;
-    color: #AF2424;
+    border-width: 0 0 1px;
+    color: #FFFFFF;
     display: block;
     font-size: 20px;
     line-height: 30px;

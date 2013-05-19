@@ -1,18 +1,15 @@
+
+
 <div class="widget-box">
-	<div class="widget-title row-fluid">
-		<div class="pull-left">
-			<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map') ?></h5>
-		</div>
-		<div class="pull-right btn-group">
-			<a class="btn btn-info tltp dropdown-toggle pull-right" data-toggle="dropdown" href="javascript:void(0)" title="<?php echo Kohana::lang('ui_main.filter_reports_by'); ?>">
+	<div class="widget-title">
+		<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map') ?></h5>
+		<div class="widget-toolbar pull-right btn-group">
+			<a class="btn btn-inverse tltp dropdown-toggle " data-toggle="dropdown" href="javascript:void(0)" title="<?php echo Kohana::lang('ui_main.filter_reports_by'); ?>">
 				<i class="icon-filter"></i>
 				<span class="caret"></span>
 			</a>
 		
-		
-		
-		
-			<ul class="dropdown-menu pull-right row-fluid" style="width:300px; padding:10px">
+			<ul class="dropdown-menu row-fluid pull-right" style="width:300px; padding:10px">
 				<li class="span7">
 					<!-- filters box -->
 					<div class="filters">
@@ -91,13 +88,12 @@
 					<!-- / report type filters -->
 				</li>
 			</ul>
-		</div>
-		<div class="btn-group pull-right">			
-			<a class="btn btn-info tltp" title="<?php echo Kohana::lang('ui_main.how_to_report'); ?>" href="#modalInfoReport" data-toggle="modal">
+	
+			<a class="btn btn-inverse tltp" title="<?php echo Kohana::lang('ui_main.how_to_report'); ?>" href="#modalInfoReport" data-toggle="modal">
 				<i class="icon-info-sign"></i>
 			</a>
-			<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-down"></i></a>
-			<a href="javascript:void(0)" class="btn btn-info"><i class="icon-chevron-up"></i></a>
+			<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
+			<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 		</div>	
 	</div>
 	<div class="widget-content">

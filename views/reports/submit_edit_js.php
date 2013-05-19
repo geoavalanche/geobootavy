@@ -440,6 +440,9 @@
 			  collapsed: true,
 			  unique: false
 			});
+
+			
+			
 			
 			// Date Picker JS
 			$("#incident_date").datepicker({ 
