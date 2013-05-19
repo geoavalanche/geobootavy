@@ -102,15 +102,12 @@
 							
 							
 							<li class="submenu">
-								<a href="#" onclick="startLocation()"><i class="icon icon-globe"></i> <?php echo Kohana::lang('ui_main.location'); ?></a>
-								<ul>
-									<li>
-										<div class="f-location-box">
-											<?php echo $alert_radius_view; ?>
-											<p></p>
-										</div>
-									</li>
-								</ul>
+								<a class="accordion-toggle" data-toggle="collapse" href="#filterLocation" onclick="startLocation()">
+									<i class="icon icon-globe"></i> <?php echo Kohana::lang('ui_main.location'); ?>
+								</a>
+								<div id="filterLocation" class="f-location-box collapse">
+									<?php echo $alert_radius_view; ?>
+								</div>
 							</li>
 							
 							

@@ -33,7 +33,7 @@
 				<div class"row-fluid">
 					<div class="span6">
 						<legend><?php echo Kohana::lang('ui_main.alerts_step1_select_city'); ?></legend>
-						<div class="step-1 img-polaroid">
+						<div class="step-1">
 							<?php echo $alert_radius_view; ?>
 						</div>
 						<input type="hidden" id="alert_lat" name="alert_lat" value="<?php echo $form['alert_lat']; ?>">

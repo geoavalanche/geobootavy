@@ -162,6 +162,13 @@ function refreshTimeline(options) {
 }
 
 
+/**
+ * Callback function for close modal bootstrap
+ */
+function closeModal(idModal) {
+	$('#' + idModal).modal('hide');
+}
+
 jQuery(function() {
 	var reportsURL = "<?php echo Kohana::config('settings.allow_clustering') == 1 ? "json/cluster" : "json"; ?>";
 

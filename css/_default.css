@@ -455,7 +455,7 @@ span.btn-icon { display:block; position:absolute; height:16px; width:16px; overf
 }
 
 .modal-header, div.dataTables_wrapper .ui-widget-header, .ui-dialog .ui-dialog-titlebar {
-    background: none repeat scroll 0 0 #CCCCCC;
+    background: none repeat scroll 0 0 #eee;
     border-radius: 5px 5px 0 0;
     height: auto;
     margin-bottom: 5px;
@@ -995,4 +995,57 @@ div.report-category-list a:hover {
 div.comment-block {
     padding: 5px 0;
 	background:none;
+}
+
+
+div.filters ul li {
+    margin-bottom: 0;
+}
+
+div.filters ul li a{
+	font-family:Verdana, Arial, Helvetica, sans-serif !important;
+	font-size:11px !important;
+	color:#333333 !important;
+}
+
+#rb_map-view {
+	width:100% !important;
+	border:none;
+}
+
+.r_media { 
+	float:none; 
+	margin:0; 
+	padding:0;
+}
+
+.r_details { 
+	float:none; 
+	margin:0; 
+	padding:0;
+}
+
+div.r_description {
+    color: #666666;
+    margin-bottom: 5px;
+    text-align: justify;
+    width: 100%;
+}
+
+#rb_list-view {
+    overflow:visible;
+}
+
+.step-1 .map-wrapper .map-holder {
+    height: 325px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.step-1 .map-wrapper {
+    border: 1px solid #999999;
+    margin: 10px 0 0;
+    overflow: hidden;
+    padding: 10px;
+    width: auto;
 }

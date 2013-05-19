@@ -8,23 +8,23 @@
 				<i class="icon-filter"></i>
 				<span class="caret"></span>
 			</a>
-			<ul class="dropdown-menu pull-right row-fluid" style="width:300px">
-				<li class="span6">
+		
+		
+		
+		
+			<ul class="dropdown-menu pull-right row-fluid" style="width:300px; padding:10px">
+				<li class="span7">
 					<!-- filters box -->
 					<div class="filters">
-						<?php
-						// Action::main_sidebar_pre_filters - Add Items to the Entry Page before filters
-						Event::run('ushahidi_action.main_sidebar_pre_filters');
-						?>
+						<?php Event::run('ushahidi_action.main_sidebar_pre_filters'); ?>
 						
 						<!-- report category filters -->
-						<span><?php echo Kohana::lang('ui_main.category');?></span>
+						<b><?php echo Kohana::lang('ui_main.category');?></b>
 						<ul id="category_switch" class="category-filters">
 							<?php
 								$color_css = 'class="swatch" style="background-color:#'.Kohana::config('settings.default_map_all').'"';
 								$all_cat_image = '';
-								if (Kohana::config('settings.default_map_all_icon') != NULL)
-								{
+								if (Kohana::config('settings.default_map_all_icon') != NULL){
 									$all_cat_image = html::image(array(
 										'src'=>Kohana::config('settings.default_map_all_icon'),
 										'style'=>'float:left;padding-right:5px;'
@@ -35,7 +35,7 @@
 							<li>
 								<a class="active" id="cat_0" href="#">
 									<span <?php echo $color_css; ?>><?php echo $all_cat_image; ?></span>
-									<span class="category-title"><?php echo Kohana::lang('ui_main.all_categories');?></span>
+									<?php echo Kohana::lang('ui_main.all_categories');?>
 								</a>
 							</li>
 							<?php
@@ -70,16 +70,16 @@
 						<!-- / category filters -->
 					</div>
 				</li>
-				<li class="span6">
+				<li class="span5">
 					<!-- report type filters -->
 					<div class="filters">
-						<span><?php echo Kohana::lang('ui_main.type'); ?></span>
-						<ul>
-							<li><a id="media_0" class="active" href="#"><span><i class="icon-file-alt"></i> <?php echo Kohana::lang('ui_main.reports'); ?></span></a></li>
-							<li><a id="media_4" href="#"><span><?php echo Kohana::lang('ui_main.news'); ?></span></a></li>
-							<li><a id="media_1" href="#"><span><i class="icon-picture"></i> <?php echo Kohana::lang('ui_main.pictures'); ?></span></a></li>
-							<li><a id="media_2" href="#"><span><i class="icon-film"></i> <?php echo Kohana::lang('ui_main.video'); ?></span></a></li>
-							<li><a id="media_0" href="#"><span><?php echo Kohana::lang('ui_main.all'); ?></span></a></li>
+						<b><?php echo Kohana::lang('ui_main.type'); ?></b>
+						<ul class="category-filters">
+							<li><a id="media_0" class="active" href="#"><i class="icon-file-alt"></i> <?php echo Kohana::lang('ui_main.reports'); ?></a></li>
+							<li><a id="media_4" href="#"><i class="icon-rss"></i> <?php echo Kohana::lang('ui_main.news'); ?></a></li>
+							<li><a id="media_1" href="#"><i class="icon-picture"></i> <?php echo Kohana::lang('ui_main.pictures'); ?></a></li>
+							<li><a id="media_2" href="#"><i class="icon-film"></i> <?php echo Kohana::lang('ui_main.video'); ?></a></li>
+							<li><a id="media_0" href="#"><i class="icon-inbox"></i> <?php echo Kohana::lang('ui_main.all'); ?></a></li>
 						</ul>
 						<div class="floatbox">
 							<?php
@@ -117,9 +117,9 @@
 
 
 
-<div id="modalInfoReport" class="modal hide fade" role="dialog">
+<div id="modalInfoReport" class="modal hide fade">
 	 <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal"><i class="icon-remove"></i></button>
+		<button class="close" onclick="closeModal('modalInfoReport')"><i class="icon-remove"></i></button>
 		<h3><i class="icon-info-sign"></i> <?php echo Kohana::lang('ui_main.how_to_report'); ?></h3>
 	</div>
 	<div class="modal-body">

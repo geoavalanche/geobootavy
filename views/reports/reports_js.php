@@ -362,56 +362,60 @@
 	
 	
 	function startLocation(){
-		alert("ok");
-		// Create the map
-		radiusMap = createMap("divMap", latitude, longitude, defaultZoom);
+
+		if(radiusMap == null)  $("#divMap").html("");
 		
-		// Add the radius layer
-		addRadiusLayer(radiusMap, latitude, longitude);
+		if($("#divMap").html() == ""){
+			// Create the map
+			radiusMap = createMap("divMap", latitude, longitude, defaultZoom);
 		
-		drawCircle(radiusMap, latitude, longitude);
-		
-		// Detect map clicks
-		radiusMap.events.register("click", radiusMap, function(e){
-			var lonlat = radiusMap.getLonLatFromViewPortPx(e.xy);
-			var lonlat2 = radiusMap.getLonLatFromViewPortPx(e.xy);
-			m = new OpenLayers.Marker(lonlat);
-			markers.clearMarkers();
-			markers.addMarker(m);
-
-			currRadius = $("#alert_radius option:selected").val();
-			radius = currRadius * 1000
-
-			lonlat2.transform(proj_900913, proj_4326);
-
-			// Store the current latitude and longitude
-			currLat = lonlat2.lat;
-			currLon = lonlat2.lon;
-
-			drawCircle(radiusMap, currLat, currLon, radius);
-
-			// Store the radius and start locations
-			urlParameters["radius"] = currRadius;
-			urlParameters["start_loc"] = currLat + "," + currLon;
-		});
-
-		// Radius selector
-		$("select#alert_radius").change(function(e, ui) {
-			var newRadius = $("#alert_radius").val();
-
-			// Convert to Meters
-			radius = newRadius * 1000;	
-
-			// Redraw Circle
-			currLat = (currLat == null)? latitude : currLat;
-			currLon = (currLon == null)? longitude : currLon;
-
-			drawCircle(radiusMap, currLat, currLon, radius);
-
-			// Store the radius and start locations
-			urlParameters["radius"] = newRadius;
-			urlParameters["start_loc"] = currLat+ "," + currLon;
-		});
+			// Add the radius layer
+			addRadiusLayer(radiusMap, latitude, longitude);
+			
+			drawCircle(radiusMap, latitude, longitude);
+			
+			// Detect map clicks
+			radiusMap.events.register("click", radiusMap, function(e){
+				var lonlat = radiusMap.getLonLatFromViewPortPx(e.xy);
+				var lonlat2 = radiusMap.getLonLatFromViewPortPx(e.xy);
+				m = new OpenLayers.Marker(lonlat);
+				markers.clearMarkers();
+				markers.addMarker(m);
+	
+				currRadius = $("#alert_radius option:selected").val();
+				radius = currRadius * 1000
+	
+				lonlat2.transform(proj_900913, proj_4326);
+	
+				// Store the current latitude and longitude
+				currLat = lonlat2.lat;
+				currLon = lonlat2.lon;
+	
+				drawCircle(radiusMap, currLat, currLon, radius);
+	
+				// Store the radius and start locations
+				urlParameters["radius"] = currRadius;
+				urlParameters["start_loc"] = currLat + "," + currLon;
+			});
+	
+			// Radius selector
+			$("select#alert_radius").change(function(e, ui) {
+				var newRadius = $("#alert_radius").val();
+	
+				// Convert to Meters
+				radius = newRadius * 1000;	
+	
+				// Redraw Circle
+				currLat = (currLat == null)? latitude : currLat;
+				currLon = (currLon == null)? longitude : currLon;
+	
+				drawCircle(radiusMap, currLat, currLon, radius);
+	
+				// Store the radius and start locations
+				urlParameters["radius"] = newRadius;
+				urlParameters["start_loc"] = currLat+ "," + currLon;
+			});
+		}
 	}
 	
 	
@@ -570,17 +574,16 @@
 		mapLoaded = 0;
 		
 		var loadingURL = "";
-		var statusHtml = "<div style=\"width: 100%; margin-top: 100px;\" align=\"center\">" + 
-					"<p style=\"padding: 10px 2px;\">" +
-					"<h3><i class='icon-spinner icon-spin icon-2x'></i> "+
+		var statusHtml = "<div style='width: 100%; margin-top: 100px; color:#fff' align='center'>" + 
+					"<p style='padding: 10px 2px;'>" +
+					"<h3 style='color:#fff'><i class='icon-spinner icon-spin icon-2x'></i> "+
 					"<?php echo Kohana::lang('ui_main.loading_reports'); ?>...</h3></p>" +
 					"</div>";
 	
 		$("#reports-box1").html(statusHtml);
 		
 		// Check if there are any parameters
-		if ($.isEmptyObject(urlParameters))
-		{
+		if ($.isEmptyObject(urlParameters)){
 			urlParameters = {show: "all"}
 		}
 		

@@ -121,9 +121,12 @@ element.style {
 .page-main .swatch, .page-main .item-swatch {
     border-color: #F1F1F1;
 }
+
 div.filters ul li a span {
-    font-size: 10px;
+    font-family: arial;
+    font-size: 11px;
 }
+
 .swatch {
     border: 1px solid white;
     float: left;
@@ -132,20 +135,15 @@ div.filters ul li a span {
     width: 16px;
 }
 .page-main ul.category-filters li a:hover, .page-main ul.category-filters li a.active {
-    color: inherit;
+	background: none repeat scroll 0 0 #666666;
+    border: 0 none;
+    color: #FFFFFF !important;
 }
-div.filters ul li a:hover, div.filters ul li a.active {
-    color: inherit;
-}
-div.filters ul li a:hover, div.filters ul li a.active {
-    color: #FFFFFF;
-}
-.page-main ul.category-filters li a {
-    font-size: 10px;
-}
+
 ul.category-filters li a:hover, ul.category-filters li a.active {
     color: #FFFFFF;
 }
+
 div.filters ul li a {
     color: #000000;
     font-size: 10px;
