@@ -167,12 +167,12 @@
 		/**
 		 * When the date filter button is clicked
 		 */
-		$("#tooltip-box a.filter-button").click(function(){
+		$("#filterReportByDate a.filter-button").click(function(){
 			// Change the text
 			$(".time-period").text($("#report_date_from").val()+" to "+$("#report_date_to").val());
 			
 			// Hide the box
-			$("#tooltip-box").hide();
+			/*$("#tooltip-box").hide();*/
 			
 			report_date_from = $("#report_date_from").val();
 			report_date_to = $("#report_date_to").val();

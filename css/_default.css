@@ -457,12 +457,16 @@ span.btn-icon { display:block; position:absolute; height:16px; width:16px; overf
 
 
 .widget-title {
-    background: none repeat scroll 0 0 #444444;
+	background: none repeat scroll 0 0 #444444;
     border-radius: 5px 5px 5px 5px;
+    clear: both;
+    float: left;
+    height: 100%;
     margin-bottom: 5px;
-    min-height: 38px;
+    min-height: 37px;
     padding-left: 3px;
     position: relative;
+    width: 100%;
 }
 
 .widget-title h5 {
@@ -488,6 +492,7 @@ span.btn-icon { display:block; position:absolute; height:16px; width:16px; overf
     background-color: transparent;
     border: 0 none;
 	color:#ccc !important;
+	clear:both;
 }
 
 
@@ -811,13 +816,13 @@ div.graph-holder {
 
 
 .ui-slider dt span {
-	background: none repeat scroll 0 0 #DDDF0D;
-    color: #333333;
+	background: none repeat scroll 0 0 #AF2424;
+    color: #FFF;
     padding: 0 0.5em;
 }
 
 .ui-widget-header {
-    background: none repeat scroll 0 0 #DDDF0D;
+    background: none repeat scroll 0 0 #AF2424;
     border: 1px solid #AAAAAA;
     color: #FFF;
     font-weight: bold;
@@ -912,7 +917,6 @@ ul.lt-icons-only li a {
 
 
 p.r_date {
-    background: url("../../default/images/icon_sprite.png") no-repeat scroll 0 -133px #E3E3E3;
     color: #908B88;
     padding: 3px 5px 4px 23px;
 	position:static;
@@ -1079,4 +1083,46 @@ div.r_description {
     padding: 10px 9px 9px;
 	border:0;
 	margin:0;
+}
+
+.tooltip{
+	text-transform:lowercase;
+	font-size:10px;
+	width:100px;
+	white-space:normal;
+}
+
+div.report-description-text h5 {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 0;
+    padding: 0 0 5px;
+    text-transform: capitalize;
+}
+
+div.comment-block h5 {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 0;
+    padding: 0 0 5px;
+    text-transform: capitalize;
+}
+
+.report_detail .r_verified, .report_detail .r_unverified {
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 4px 0;
+    padding: 3px 5px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100px;
+	float:none;
+}
+
+div.report-additional-reports h5 {
+    font-size: 11px;
+    margin: 10px 5px 2px;
 }

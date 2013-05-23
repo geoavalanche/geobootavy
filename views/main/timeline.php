@@ -10,13 +10,15 @@
 				</div>
 			</div>
 			<div class="widget-content">
-				<?php echo form::open(NULL, array('method' => 'get', 'class' => 'form-inline')); ?>
+				<?php echo form::open(NULL, array('method' => 'get', 'class' => 'form-inline', 'style' => 'padding:20px')); ?>
 					<input type="hidden" value="0" name="currentCat" id="currentCat"/>
 					<fieldset>
-						<label for="startDate"><?php echo Kohana::lang('ui_main.from'); ?>:</label>
-						<select name="startDate" id="startDate"><?php echo $startDate; ?></select>
-						<label for="endDate"><?php echo Kohana::lang('ui_main.to'); ?>:</label>
-						<select name="endDate" id="endDate"><?php echo $endDate; ?></select>
+						<div style="text-align:center">
+							<label for="startDate"><?php echo Kohana::lang('ui_main.from'); ?>:</label>
+							<select name="startDate" id="startDate" style="width:auto"><?php echo $startDate; ?></select>
+							<label for="endDate"><?php echo Kohana::lang('ui_main.to'); ?>:</label>
+							<select name="endDate" id="endDate" style="width:auto"><?php echo $endDate; ?></select>
+						</div>
 					</fieldset>
 				<?php echo form::close(); ?>
 				<br />

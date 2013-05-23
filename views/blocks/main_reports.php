@@ -40,7 +40,11 @@
 								</a>
 							</td>
 							<td><i class="icon-calendar"></i> <?php echo $incident_date; ?></td>
-							<td><a href="<?php echo url::site() . 'reports/view/' . $incident_id; ?>"> <?php echo html::specialchars($incident_title) ?></a></td>
+							<td>
+								<a href="<?php echo url::site() . 'reports/view/' . $incident_id; ?>">
+									<?php echo html::specialchars($incident_title) ?>
+								</a>
+							</td>
 						</tr>
 					<?php
 					}

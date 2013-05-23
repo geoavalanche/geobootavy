@@ -89,7 +89,12 @@
 											<input id="report_date_from" type="text" style="width:78px" />
 											<strong><?php echo ucfirst(strtolower(Kohana::lang('ui_admin.to'))); ?>:</strong>
 											<input id="report_date_to" type="text" style="width:78px" />
-											<a href="#" id="applyDateFilter" class="filter-button" style="position:static;"><?php echo Kohana::lang('ui_main.go')?></a>
+											
+											<div id="filterReportByDate">
+												<a href="#" id="applyDateFilter" class="filter-button" style="position:static;">
+													<i class="icon-search"></i> <?php echo Kohana::lang('ui_main.go')?>
+												</a>
+											</div>
 										<?php echo form::close(); ?>
 									</li>
 								</ul>
