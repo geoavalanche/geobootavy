@@ -8,7 +8,6 @@
 				<i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.showing_reports_from', array(date('M d, Y', $oldest_timestamp), date('M d, Y', $latest_timestamp))); ?>
 			</h5>
 			<div class="widget-toolbar pull-right btn-group">
-				<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
 				<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 			</div>
 		</div>

@@ -5,7 +5,6 @@
 			<div class="widget-title">
 				<h5><i class="icon-calendar"></i> <?php echo Kohana::lang('ui_main.select_in_map');?></h5>
 				<div class="widget-toolbar pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
 					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>
@@ -31,7 +30,6 @@
 			<div class="widget-title">
 				<h5><i class="icon-bar-chart"></i> <?php echo Kohana::lang('ui_main.quick_stats');?></h5>
 				<div class="widget-toolbar pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
 					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>

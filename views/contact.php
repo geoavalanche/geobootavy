@@ -5,7 +5,6 @@
 			<div class="widget-title">
 				<h5><i class="icon-envelope"></i> <?php echo Kohana::lang('ui_main.contact'); ?></h5>
 				<div class="widget-toolbar pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
 					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>

@@ -33,19 +33,30 @@
 				$('.jquery-bar').slideToggle();
 			});  
 			
-			
 			/* Box widget Head Buttons */
 			$('.widget-title .btn').live("click",function(){
-				var cls = $(this).find('i')[0].className; 
-				if( cls === 'icon-chevron-up' ){
-					var bb = $(this).parent().parent().parent()[0];
-					var	bbody = $(bb).find('.widget-content')[0];
-					$(bbody).slideUp(500);
+				var check = 0;
+				var parentTemp = $(this);
+				while(check == 0){
+					if(parentTemp.parent().attr("class") != "widget-box"){
+						parentTemp = parentTemp.parent();
+					}else{
+						parentTemp = parentTemp.parent();
+						check = 1;
+					}
 				}
-				if ( cls == 'icon-chevron-down' ){
-					var bb = $(this).parent().parent().parent()[0];
-					var bbody = $(bb).find('.widget-content')[0];
-					$(bbody).slideDown(500);
+				
+				var cls = $(this).find('i')[0].className; 
+				if(cls == 'icon-chevron-up'){
+					var icon = $(this).find('i')[0];
+					parentTemp.find('.widget-content').slideUp(500);
+					$(icon).removeClass(cls);
+					$(icon).addClass("icon-chevron-down");
+				}else{
+					var icon = $(this).find('i')[0];
+					parentTemp.find('.widget-content').slideDown(500);
+					$(icon).removeClass(cls);
+					$(icon).addClass("icon-chevron-up");
 				}
 			});
 			

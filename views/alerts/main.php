@@ -7,7 +7,6 @@
 			<div class="widget-title">
 				<h5><i class="icon-cloud"></i> <?php echo Kohana::lang('ui_main.alerts_get'); ?></h5>
 				<div class="widget-toolbar pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
 					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>

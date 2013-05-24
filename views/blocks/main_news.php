@@ -6,7 +6,6 @@
 				<a class="btn btn-inverse tltp" href="<?php echo url::site() . 'feeds' ?>" title="<?php echo Kohana::lang('ui_main.view_more'); ?>">
 					<i class="icon-reorder"></i>
 				</a>
-				<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
 				<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 			</div>
 		</div>
@@ -14,8 +13,8 @@
 			<table id="table-news">
 				<thead>
 					<tr>
-						<th scope="col"><?php echo Kohana::lang('ui_main.source'); ?></th>
-						<th scope="col"><?php echo Kohana::lang('ui_main.date'); ?></th>
+						<th width="56" scope="col"><?php echo Kohana::lang('ui_main.source'); ?></th>
+						<th width="100" scope="col"><?php echo Kohana::lang('ui_main.date'); ?></th>
 						<th scope="col"><?php echo Kohana::lang('ui_main.title'); ?></th>
 					</tr>
 				</thead>
@@ -24,7 +23,8 @@
 					if ($feeds->count() != 0){
 						foreach ($feeds as $feed){
 							$feed_id = $feed->id;
-							$feed_title = text::limit_chars($feed->item_title, 40, '...', True);
+							/*$feed_title = text::limit_chars($feed->item_title, 40, '...', True);*/
+							$feed_title = $feed->item_title;
 							$feed_link = $feed->item_link;
 							$feed_date = date('M j Y', strtotime($feed->item_date));
 							$feed_source = text::limit_chars($feed->feed->feed_name, 15, "...");

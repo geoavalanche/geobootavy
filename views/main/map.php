@@ -92,7 +92,6 @@
 			<a class="btn btn-inverse tltp" title="<?php echo Kohana::lang('ui_main.how_to_report'); ?>" href="#modalInfoReport" data-toggle="modal">
 				<i class="icon-info-sign"></i>
 			</a>
-			<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
 			<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 		</div>	
 	</div>

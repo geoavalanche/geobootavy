@@ -3,11 +3,16 @@
 	<div class="span7">
   		<div class="widget-box">
 			<div class="widget-title">
-				<h5><i class="icon-credit-card"></i> <?php echo htmlentities($incident_title, ENT_QUOTES, "UTF-8"); ?></h5>
-				<div class="widget-toolbar pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
-					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
-				</div>
+				<table class="table" style="margin:0">
+					<tr>
+						<td class="truncate"><i class="icon-credit-card"></i> <?php echo htmlentities($incident_title, ENT_QUOTES, "UTF-8"); ?></td>
+						<td width="38">
+							<div class="widget-toolbar pull-right btn-group">
+								<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
+							</div>
+						</td>
+					</tr>
+				</table>
 			</div>
 			
 			<div class="widget-content">
@@ -186,7 +191,6 @@
 			<div class="widget-title">
 				<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map');?></h5>
 				<div class="widget-toolbar pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
 					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>
@@ -208,7 +212,6 @@
 			<div class="widget-title">
 				<h5><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.additional_reports');?></h5>
 				<div class="widget-toolbar pull-right btn-group">
-					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-down"></i></a>
 					<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
 				</div>
 			</div>

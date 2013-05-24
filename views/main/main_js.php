@@ -117,7 +117,11 @@ function refreshTimeline(options) {
 					zoomType: 'x'
 				},
 				title: {
-					text: 'Crowdsourced Snow Avalanche Information '
+					text: 'Crowdsourced Snow Avalanche Information',
+					style: {
+						 color: '#AF2424',
+						 font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+					  }
 				},
 				subtitle: {
 					text: 'The chart shows the number of reports loaded over the years'
@@ -152,6 +156,7 @@ function refreshTimeline(options) {
 				legend: {enabled:false},
 				series: [{
 					name: '',
+					color: '#AF2424',
 					data: response[0].data
 				}]
 			});
