@@ -15,12 +15,15 @@
 		<div class="widget-content">
 			<div class="row-fluid">
 				
-				<!-- reports-box -->
-				<div id="reports-box1" class="span9"> <?php echo $report_listing_view; ?> </div>
-				<!-- end #reports-box -->
+
+				<div id="reports-box1" class="span8"> 
+					<div>
+						<?php echo $report_listing_view; ?> 
+					</div>
+				</div>
 
 
-				<div id="sidebar" class="span3">					
+				<div id="sidebar" class="span4">					
 
 						<!-- filters-box -->
 						<div class="actionFilter">
@@ -217,7 +220,11 @@
 									</a>
 								</div>	
 								<ul>
-									<li><div class="f-customFields-box"><?php echo $custom_forms_filter; ?></div></li>
+									<li>
+										<div class="f-customFields-box" style="padding:10px">
+											<?php echo $custom_forms_filter; ?>
+										</div>
+									</li>
 								</ul>
 							</li>
 							

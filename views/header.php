@@ -52,7 +52,7 @@
 					parentTemp.find('.widget-content').slideUp(500);
 					$(icon).removeClass(cls);
 					$(icon).addClass("icon-chevron-down");
-				}else{
+				}else if(cls == 'icon-chevron-down'){
 					var icon = $(this).find('i')[0];
 					parentTemp.find('.widget-content').slideDown(500);
 					$(icon).removeClass(cls);
