@@ -16,12 +16,12 @@
 			</table>
 		</div>
 		<div class="widget-content">
-			<table id="table-reports">
+			<table class="table table-dark" id="table-reports">
 				<thead>
 					<tr>
-						<th width="56" scope="col" class="location"><?php echo Kohana::lang('ui_main.location'); ?></th>
-						<th width="100" scope="col" class="date"><?php echo Kohana::lang('ui_main.date'); ?></th>
-						<th scope="col" class="title"><?php echo Kohana::lang('ui_main.title'); ?></th>
+						<th width="56"><?php echo Kohana::lang('ui_main.location'); ?></th>
+						<th width="100"><?php echo Kohana::lang('ui_main.date'); ?></th>
+						<th><?php echo Kohana::lang('ui_main.title'); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -60,6 +60,6 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		$("#table-reports").tablecloth({ theme: "dark" });
+		/*$("#table-reports").tablecloth({ theme: "dark" });*/
 	</script>
 </div>

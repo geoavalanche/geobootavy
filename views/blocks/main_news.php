@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="widget-content">
-			<table id="table-news">
+			<table class="table table-dark" id="table-news">
 				<thead>
 					<tr>
 						<th width="56" scope="col"><?php echo Kohana::lang('ui_main.source'); ?></th>
@@ -58,6 +58,6 @@
 	</div>
 		
 	<script type="text/javascript">
-		$("#table-news").tablecloth({ theme: "dark" });
+		/*$("#table-news").tablecloth({ theme: "dark" });*/
 	</script>
 </div>
