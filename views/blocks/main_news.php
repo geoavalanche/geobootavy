@@ -1,13 +1,19 @@
 <div class="span6">
 	<div class="widget-box">
 		<div class="widget-title">
-			<h5><i class="icon-rss"></i> <?php echo Kohana::lang('ui_main.official_news');?></h5>
-			<div class="widget-toolbar pull-right btn-group">
-				<a class="btn btn-inverse tltp" href="<?php echo url::site() . 'feeds' ?>" title="<?php echo Kohana::lang('ui_main.view_more'); ?>">
-					<i class="icon-reorder"></i>
-				</a>
-				<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
-			</div>
+			<table class="table" style="margin:0">
+				<tr>
+					<td class="truncate"><i class="icon-rss"></i> <?php echo Kohana::lang('ui_main.official_news');?></td>
+					<td width="90">
+						<div class="widget-toolbar pull-right btn-group">
+							<a class="btn btn-inverse tltp" href="<?php echo url::site() . 'feeds' ?>" title="<?php echo Kohana::lang('ui_main.view_more'); ?>">
+								<i class="icon-reorder"></i>
+							</a>
+							<a href="javascript:void(0)" class="btn btn-inverse"><i class="icon-chevron-up"></i></a>
+						</div>
+					</td>
+				</tr>
+			</table>
 		</div>
 		<div class="widget-content">
 			<table class="table table-dark" id="table-news">
@@ -56,8 +62,4 @@
 			</table>
 		</div>
 	</div>
-		
-	<script type="text/javascript">
-		/*$("#table-news").tablecloth({ theme: "dark" });*/
-	</script>
 </div>

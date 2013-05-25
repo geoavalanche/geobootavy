@@ -8,17 +8,17 @@
 	<?php echo $header_block; ?>
 	<?php Event::run('ushahidi_action.header_scripts'); // Action::header_scripts - Additional Inline Scripts from Plugins ?>
 	<link href="<?php echo url::site().'themes/madev/css/dynatree/skin-vista/ui.dynatree.css' ?>" rel="stylesheet" type="text/css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+	<link href="<?php echo url::site().'themes/madev/css/font-awesome.min.css' ?>"  rel="stylesheet" type="text/css">
 	<link href="<?php echo url::site().'themes/madev/css/bootstrap-overwrite.css' ?>"  rel="stylesheet" type="text/css">
+	<link href="<?php echo url::site().'themes/madev/css/flexslider.css' ?>"  rel="stylesheet" type="text/css">
 	<link href="<?php echo url::site().'themes/madev/css/tablecloth.css' ?>" rel="stylesheet" type="text/css">
 
 	<script src="<?php echo url::site().'themes/madev/js/highchart/highcharts.js' ?>" type="text/javascript"></script>
 	<script src="<?php echo url::site().'themes/madev/js/highchart/themes/gray.js' ?>" type="text/javascript"></script>
-	<script src="<?php echo url::site().'themes/madev/js/tablecloth/jquery.tablecloth.js' ?>" type="text/javascript"></script>
 	<script src="<?php echo url::site().'themes/madev/js/jquery.dynatree.min.js' ?>" type="text/javascript"></script>
+	<script src="<?php echo url::site().'themes/madev/js/jquery.flexslider-min.js' ?>" type="text/javascript"></script>
 	<script src="<?php echo url::site().'themes/madev/js/bootstrap.2.3.2.min.js' ?>" type="text/javascript"></script>
 
-	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('.tltp').tooltip();
@@ -63,6 +63,13 @@
 			/* Dropdown with form */
 			$('.dropdown-menu').find('form').click(function (e) {
 				e.stopPropagation();
+			});
+			
+			$('.flexslider').flexslider({
+				animation: "fade",              //String: Select your animation type, "fade" or "slide"
+				slideDirection: "vertical",   //String: Select the sliding direction, "horizontal" or "vertical"
+				slideshowSpeed: 2000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
+				animationDuration: 2000   
 			});
 			  
 		});
@@ -150,7 +157,38 @@
 					<span><?php echo $site_tagline; ?></span>
 				</div>
 				<?php else: ?>
-				<a href="<?php echo url::site();?>"><img src="<?php echo $banner; ?>" alt="<?php echo $site_name; ?>" style="width:90%" /></a>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<!--<a href="<?php echo url::site();?>"><img src="<?php echo $banner; ?>" alt="<?php echo $site_name; ?>" style="width:90%" /></a>-->
+				<div class="flexslider">
+					<ul class="slides">
+						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide1.jpg' ?>" style="width:100%" /></li>
+						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide2.jpg' ?>" style="width:100%" /></li>
+						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide3.jpg' ?>" style="width:100%" /></li>
+						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide4.jpg' ?>" style="width:100%" /></li>
+					</ul>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				<?php endif; ?>
 				<!-- / logo -->
 				<?php Event::run('ushahidi_action.main_sidebar'); ?>

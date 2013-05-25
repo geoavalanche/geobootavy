@@ -4,7 +4,7 @@
 			<table class="table" style="margin:0">
 				<tr>
 					<td class="truncate"><i class="icon-credit-card"></i> <?php echo Kohana::lang('ui_main.reports_listed');?></td>
-					<td width="75">
+					<td width="90">
 						<div class="widget-toolbar pull-right btn-group">
 							<a class="btn btn-inverse tltp" href="<?php echo url::site() . 'reports/' ?>" title="<?php echo Kohana::lang('ui_main.view_more'); ?>">
 								<i class="icon-reorder"></i>
@@ -59,7 +59,4 @@
 			</table>
 		</div>
 	</div>
-	<script type="text/javascript">
-		/*$("#table-reports").tablecloth({ theme: "dark" });*/
-	</script>
 </div>
