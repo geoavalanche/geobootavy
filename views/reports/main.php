@@ -226,7 +226,9 @@
 								<ul>
 									<li>
 										<div class="f-customFields-box" style="padding:10px">
-											<?php echo $custom_forms_filter; ?>
+											<form class="form-horizontal">
+												<?php echo $custom_forms_filter; ?>
+											</form>
 										</div>
 									</li>
 								</ul>

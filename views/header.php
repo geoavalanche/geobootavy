@@ -5,10 +5,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link href="<?php echo url::site().'themes/madev/css/bootstrap-combined.no-icons.min.css' ?>"  rel="stylesheet" type="text/css">
+	
 	<?php echo $header_block; ?>
 	<?php Event::run('ushahidi_action.header_scripts'); // Action::header_scripts - Additional Inline Scripts from Plugins ?>
 	<link href="<?php echo url::site().'themes/madev/css/dynatree/skin-vista/ui.dynatree.css' ?>" rel="stylesheet" type="text/css">
-	<link href="<?php echo url::site().'themes/madev/css/font-awesome.min.css' ?>"  rel="stylesheet" type="text/css">
+	
+	<!--<link href="<?php echo url::site().'themes/madev/css/font-awesome.min.css' ?>"  rel="stylesheet" type="text/css">-->
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+
 	<link href="<?php echo url::site().'themes/madev/css/bootstrap-overwrite.css' ?>"  rel="stylesheet" type="text/css">
 	<link href="<?php echo url::site().'themes/madev/css/flexslider.css' ?>"  rel="stylesheet" type="text/css">
 	<link href="<?php echo url::site().'themes/madev/css/tablecloth.css' ?>" rel="stylesheet" type="text/css">

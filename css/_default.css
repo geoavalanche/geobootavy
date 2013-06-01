@@ -1138,3 +1138,15 @@ table {
     vertical-align: middle !important;
     white-space: nowrap;
 }
+
+.report_row select, .report_row input{
+	width:auto;
+}
+
+.report_row table{
+	width:100%;
+}
+
+.form-horizontal .control-group {
+    margin-bottom: 0;
+}
