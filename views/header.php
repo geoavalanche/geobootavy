@@ -173,10 +173,10 @@
 				<!--<a href="<?php echo url::site();?>"><img src="<?php echo $banner; ?>" alt="<?php echo $site_name; ?>" style="width:90%" /></a>-->
 				<div class="flexslider">
 					<ul class="slides">
-						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide1.jpg' ?>" style="width:100%" /></li>
-						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide2.jpg' ?>" style="width:100%" /></li>
-						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide3.jpg' ?>" style="width:100%" /></li>
-						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide4.jpg' ?>" style="width:100%" /></li>
+						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide1small.jpg' ?>" style="width:100%" /></li>
+						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide2small.jpg' ?>" style="width:100%" /></li>
+						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide3small.jpg' ?>" style="width:100%" /></li>
+						<li><img src="<?php echo url::site().'themes/madev/images/slide/slide4small.jpg' ?>" style="width:100%" /></li>
 					</ul>
 				</div>
 				
