@@ -158,14 +158,3 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-		/*$("#categories").treeview();*/
-		/*
-		$.each($("#categories ul").find("li"), function(index, li){
-			alert("FIRST:" + $(li).find('div.hitarea').length);
-			$(li).find('div.hitarea').html("<i class='icon-home'></i>");
-			alert("AFTER:" + $(li).find('div.hitarea').length);
-
-		});
-		*/
-</script>
