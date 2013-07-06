@@ -1151,3 +1151,33 @@ table {
     margin-bottom: 0;
 }
 
+.search_info {
+    background-color: #EEEEEE;
+    border: 1px solid #999999;
+    color: #333333;
+    font-weight: bold;
+    margin: 0 0 15px;
+    padding: 5px;
+}
+
+
+.search_result {
+    background: none repeat scroll 0 0 #444444;
+    font-size: 13px;
+    padding: 5px;
+}
+
+
+.search_date {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+ul.pager {
+    margin: 12px 0;
+    padding: 0 0 0 1px;
+}
+
