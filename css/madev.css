@@ -96,8 +96,8 @@ div.search-form input.searchbtn {
 
 /* header */
 div#topheader { 
-    background: url("../images/bgScuro.png") repeat scroll 0 0 #313131;
-    margin: 10px 0;
+	background: url("../images/bgScuro.png") repeat scroll 0 0 #313131;
+    margin: 8px 0 0;
     padding: 0;
 }
 
@@ -186,7 +186,7 @@ div#right { position:absolute; z-index:1000; }
   .page-main ul.category-filters li a { font-size:10px; padding:2px 4px 2px 2px; -moz-border-radius: 3px; -webkit-border-radius: 3px; float:left; clear:right; border:0; border:1px transparent solid; }
   .page-main .swatch, .page-main .item-swatch { border-color:#f1f1f1; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
   .page-main ul.category-filters li a:hover, 
-  .page-main ul.category-filters li a.active { background:none; border:1px solid #c2c2c2; color:inherit; }
+  .page-main ul.category-filters li a.active { background:#333; border:1px solid #c2c2c2; color:#fff; }
   
   /* home page report type filters */
   #report-type-filter { overflow:auto; padding:5px; margin:0; } 
@@ -565,9 +565,9 @@ span.btn-icon { display:block; position:absolute; height:16px; width:16px; overf
     border-top: 1px solid #333333;
 }
 #sidebar > ul ul li a {
-    color: #777777;
+    color: #FFFFFF;
     display: block;
-    padding: 10px 0 10px 25px;
+    padding: 5px 0 5px 10px;
 }
 
 
@@ -1177,7 +1177,22 @@ table {
 }
 
 ul.pager {
-    margin: 12px 0;
-    padding: 0 0 0 1px;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
+.alert {
+    margin: 3px 0;
+}
+
+.accordion-inner {
+    border-top: 1px solid #E5E5E5;
+    padding: 9px 0;
+}
+
+
+.accordion-group {
+    border: 1px solid #333333;
+    border-radius: 4px 4px 4px 4px;
+    margin-bottom: 5px;
+}
