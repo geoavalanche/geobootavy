@@ -349,30 +349,32 @@
 					<div id="divNews" class="control-group" style="clear:both">
 						<label class="control-label" for="incident_news"><i class="icon-paper-clip"></i> <?php echo Kohana::lang('ui_main.reports_news'); ?></label>
 						<div class="controls">
-							<?php $i = (empty($form['incident_news'])) ? 1 : 0;	?>
-							<?php if (empty($form['incident_news'])): ?>
-								<?php print form::input('incident_news[]', '', ' class="text long2"'); ?>
-								<a href="#" class="btn btn-danger" onClick="addFormField('divNews','incident_news','news_id','text'); return false;">
-									<i class="icon-plus-sign"></i>
-								</a>
-							<?php else: ?>
-								<?php foreach ($form['incident_news'] as $value): ?>
-								<div id="<?php echo $i; ?>">
-									<?php echo form::input('incident_news[]', $value, ' class="text long2"'); ?>
+							<div class="input-append">
+								<?php $i = (empty($form['incident_news'])) ? 1 : 0;	?>
+								<?php if (empty($form['incident_news'])): ?>
+									<?php print form::input('incident_news[]', '', ' class="text long2"'); ?>
 									<a href="#" class="btn btn-danger" onClick="addFormField('divNews','incident_news','news_id','text'); return false;">
 										<i class="icon-plus-sign"></i>
 									</a>
-									<?php if ($i != 0): ?>
-										<?php $css_id = "#incident_news_".$i; ?>
-										<a href="#" class="btn btn-danger"	onClick="removeFormField('<?php echo $css_id; ?>'); return false;">
-											<i class="icon-minus-sign"></i>
+								<?php else: ?>
+									<?php foreach ($form['incident_news'] as $value): ?>
+									<div id="<?php echo $i; ?>">
+										<?php echo form::input('incident_news[]', $value, ' class="text long2"'); ?>
+										<a href="#" class="btn btn-danger" onClick="addFormField('divNews','incident_news','news_id','text'); return false;">
+											<i class="icon-plus-sign"></i>
 										</a>
-									<?php endif; ?>
-								</div>
-								<?php $i++; ?>
-								<?php endforeach; ?>
-							<?php endif; ?>
-							<?php print form::input(array('name'=>'news_id', 'type'=>'hidden', 'id'=>'news_id'), $i); ?>
+										<?php if ($i != 0): ?>
+											<?php $css_id = "#incident_news_".$i; ?>
+											<a href="#" class="btn btn-danger"	onClick="removeFormField('<?php echo $css_id; ?>'); return false;">
+												<i class="icon-minus-sign"></i>
+											</a>
+										<?php endif; ?>
+									</div>
+									<?php $i++; ?>
+									<?php endforeach; ?>
+								<?php endif; ?>
+								<?php print form::input(array('name'=>'news_id', 'type'=>'hidden', 'id'=>'news_id'), $i); ?>
+							</div>
 						</div>
 					</div>
 						
@@ -381,31 +383,33 @@
 					<div id="divVideo" class="control-group" style="clear:both">
 						<label class="control-label" for="incident_video"><i class="icon-film"></i> <?php print Kohana::lang('ui_main.external_video_link'); ?></label>
 						<div class="controls">
-							<?php $i = (empty($form['incident_video'])) ? 1 : 0; ?>
-							<?php if (empty($form['incident_video'])): ?>
-								<?php print form::input('incident_video[]', '', ' class="text"'); ?>
-								<a href="#" class="btn btn-danger" onClick="addFormField('divVideo','incident_video','video_id','text'); return false;">
-									<i class="icon-plus-sign"></i>
-								</a>
-							<?php else: ?>
-								<?php foreach ($form['incident_video'] as $value): ?>
-									<div id="<?php  echo $i; ?>">
-										<?php print form::input('incident_video[]', $value, ' class="text"'); ?>
-										<a href="#" class="btn btn-danger" onClick="addFormField('divVideo','incident_video','video_id','text'); return false;">
-											<i class="icon-plus-sign"></i>
-										</a>
-										<?php if ($i != 0): ?>
-											<?php $css_id = "#incident_video_".$i; ?>
-											<a href="#" class="btn btn-danger"	onClick="removeFormField('<?php echo $css_id; ?>'); return false;">
-												<i class="icon-minus-sign"></i>
+							<div class="input-append">
+								<?php $i = (empty($form['incident_video'])) ? 1 : 0; ?>
+								<?php if (empty($form['incident_video'])): ?>
+									<?php print form::input('incident_video[]', '', ' class="text"'); ?>
+									<a href="#" class="btn btn-danger" onClick="addFormField('divVideo','incident_video','video_id','text'); return false;">
+										<i class="icon-plus-sign"></i>
+									</a>
+								<?php else: ?>
+									<?php foreach ($form['incident_video'] as $value): ?>
+										<div id="<?php  echo $i; ?>">
+											<?php print form::input('incident_video[]', $value, ' class="text"'); ?>
+											<a href="#" class="btn btn-danger" onClick="addFormField('divVideo','incident_video','video_id','text'); return false;">
+												<i class="icon-plus-sign"></i>
 											</a>
-										<?php endif; ?>
-									</div>
-									<?php $i++; ?>
-								
-								<?php endforeach; ?>
-							<?php endif; ?>
-							<?php print form::input(array('name'=>'video_id','type'=>'hidden','id'=>'video_id'), $i); ?>
+											<?php if ($i != 0): ?>
+												<?php $css_id = "#incident_video_".$i; ?>
+												<a href="#" class="btn btn-danger"	onClick="removeFormField('<?php echo $css_id; ?>'); return false;">
+													<i class="icon-minus-sign"></i>
+												</a>
+											<?php endif; ?>
+										</div>
+										<?php $i++; ?>
+									
+									<?php endforeach; ?>
+								<?php endif; ?>
+								<?php print form::input(array('name'=>'video_id','type'=>'hidden','id'=>'video_id'), $i); ?>
+							</div>
 						</div>
 					</div>
 					<?php Event::run('ushahidi_action.report_form_after_video_link'); ?>
@@ -413,14 +417,31 @@
 
 					<!-- Photo Fields -->
 					<div id="divPhoto" class="control-group" style="clear:both">
-						<label class="control-label" for="incident_photo"><i class="icon-picture"></i> <?php echo Kohana::lang('ui_main.reports_photos'); ?></label>
+						<label class="control-label" for="incident_photo"><i class="icon-picture"></i>&nbsp;<?php echo Kohana::lang('ui_main.reports_photos'); ?></label>
 						<div class="controls">
 							<?php $i = (empty($form['incident_photo']['name'][0])) ? 1 : 0;	?>
 							<?php if (empty($form['incident_photo']['name'][0])): ?>
-							<?php print form::upload('incident_photo[]', '', ' class="file"'); ?>
-							<a href="#" class="btn btn-danger" onClick="addFormField('divPhoto', 'incident_photo','photo_id','file'); return false;">
+							
+							
+							<?php //print form::upload('incident_photo[]', '', ' class="file"'); ?>
+							<div class="fileupload fileupload-new pull-left" data-provides="fileupload">
+								<div class="input-append">
+									<div class="uneditable-input span3">
+										<i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span>
+									</div>
+									<span class="btn btn-file btn-danger">
+										<span class="fileupload-new">Select file</span>
+										<span class="fileupload-exists">Change</span>
+										<input type="file" name="incident_photo[]" class="file" />
+									</span>
+									<a href="#" class="btn fileupload-exists btn-danger" data-dismiss="fileupload">Remove</a>
+								</div>
+							</div>
+							<a href="#" class="btn btn-danger pull-left" onClick="addFormField('divPhoto', 'incident_photo','photo_id','file'); return false;">
 								<i class="icon-plus-sign"></i>
 							</a>
+
+
 							<?php else: ?>
 								<?php foreach ($form['incident_photo']['name'] as $value): ?>
 									<div id="<?php echo $i; ?>">

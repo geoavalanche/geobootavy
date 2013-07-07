@@ -655,29 +655,74 @@
 
 
 		function addFormField(div, field, hidden_id, field_type) {
+			
+			/* OLD CODE OLD INPUT FILE
 			var id = document.getElementById(hidden_id).value;
 			// HTML for the form field to be added
 			var formFieldHTML = "<div class=\"controls\" id=\"" + field + "_" + id + "\" style=\"clear:both\">" +
+				"<div class='input-append'>" +
 			    "<input type=\"" + field_type + "\" name=\"" + field + "[]\" class=\"" + field_type + " \" />" +
 			    "<a href=\"#\" class=\"btn btn-primary\" "+" onClick=\"addFormField('" + div + "','" + field + "','" + hidden_id + "','" + field_type + "'); return false;\">"+"<i class='icon-plus-sign'></i></a>" +
-			    "<a href=\"#\" class=\"btn btn-primary\"  onClick='removeFormField(\"#" + field + "_" + id + "\"); return false;'><i class='icon-minus-sign'></i></a></div>";
+			    "<a href=\"#\" class=\"btn btn-primary\"  onClick='removeFormField(\"#" + field + "_" + id + "\"); return false;'><i class='icon-minus-sign'></i></a></div> + 
+				"</div>";
 			$("#" + div).append(formFieldHTML);
 			$("#" + field + "_" + id).effect("highlight", {}, 800);
 			id = (id - 1) + 2;
 			document.getElementById(hidden_id).value = id;
+			*/
+			
+			var id = document.getElementById(hidden_id).value;
+			if(field_type != "file"){
+				var formFieldHTML = "<div class=\"controls\" id=\"" + field + "_" + id + "\">" +
+					"<div class='input-append'>" +
+					"<input type=\"" + field_type + "\" name=\"" + field + "[]\" class=\"" + field_type + " \" />" +
+					/*"<a href=\"#\" class=\"btn btn-primary\" "+" onClick=\"addFormField('" + div + "','" + field + "','" + hidden_id + "','" + field_type + "'); return false;\">"+"<i class='icon-plus-sign'></i></a>" +*/
+					"<a href=\"#\" class=\"btn btn-danger\"  onClick='removeFormField(\"#" + field + "_" + id + "\"); return false;'><i class='icon-minus-sign'></i></a></div></div>";
+				$("#" + div).append(formFieldHTML);
+			}else{
+				var $fieldControl = $("<div class='controls' id='"+field+"_"+id+ "' style='clear:both' />");
+				var $fileUpload = $("<div class='fileupload fileupload-new pull-left' data-provides='fileupload' />");
+				var $input = $("<div class='input-append' />");
+				var htmlString = '<div class="uneditable-input span3">' + 
+									'<i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span>' + 
+								  '</div>' + 
+								  '<span class="btn btn-file btn-danger">' + 
+									  '<span class="fileupload-new">Select file</span>' + 
+									  '<span class="fileupload-exists">Change</span>' + 
+									  '<input type="file" name="incident_photo[]" class="file" />' + 
+								  '</span>' + 
+								  /*'<a href="#" class="btn fileupload-exists btn-danger" data-dismiss="fileupload">Remove</a>' + */
+								  /*"<a href=\"#\" class=\"btn btn-primary\" "+" onClick=\"addFormField('" + div + "','" + field + "','" + hidden_id + "','" + field_type + "'); return false;\">"+"<i class='icon-plus-sign'></i></a>" +*/
+			     				  "<a href=\"#\" class=\"btn btn-danger\"  onClick='removeFormField(\"#" + field + "_" + id + "\"); return false;'><i class='icon-minus-sign'></i></a>";
+				
+				 $input.html(htmlString);
+				 $fileUpload.append($input);
+				 $fieldControl.append($fileUpload);
+				 $("#" + div).append($fieldControl);
+			 }
+			 id = (id - 1) + 2;
+			 document.getElementById(hidden_id).value = id;
+								
+									
+								
 		}
 
 
 
 		function removeFormField(id) {
+			$(id).remove();
+			/* OLD CODE
 			var answer = confirm("<?php echo Kohana::lang('ui_admin.are_you_sure_you_want_to_delete_this_item'); ?>?");
 		    if (answer){
 				$(id).remove();
 		    }
 			else{
 				return false;
-		    }
+		    }*/
 		}
+		
+		
+		
 		
 		function deletePhoto (id, div)
 		{

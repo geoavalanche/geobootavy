@@ -31,11 +31,15 @@ h5, h4 {
 
 body#page{
 	background:url("../images/bgScuro.png") repeat scroll 0 0 #313131;
+	/*background:url("../images/content_inner_bg.png") repeat scroll 0 0 #FAFAFA;*/
+	/*background:url("../images/darkgrain.png") repeat scroll 0 0 #EEEEEE;*/
 }
 
 
 div#middle {
     background: url("../images/transparant-20.png") repeat scroll left top transparent;
+	/*background:url("../images/content_inner_bg.png") repeat scroll 0 0 #FAFAFA;*/
+	/*background:url("../images/darkgrain.png") repeat scroll 0 0 #EEEEEE;*/
     margin: 0;
     padding: 0 0 5px;
 }
@@ -97,7 +101,7 @@ div.search-form input.searchbtn {
 /* header */
 div#topheader { 
 	background: url("../images/bgScuro.png") repeat scroll 0 0 #313131;
-    margin: 8px 0 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -1182,7 +1186,7 @@ ul.pager {
 }
 
 .alert {
-    margin: 3px 0;
+    margin: 3px 0 1px 0;
 }
 
 .accordion-inner {
@@ -1196,3 +1200,52 @@ ul.pager {
     border-radius: 4px 4px 4px 4px;
     margin-bottom: 5px;
 }
+
+h1, a, table.table-list tbody tr td a, .hover .r_details h3 a.r_title, div.footermenu ul li a, div.search-form input.text {
+    color: #FFFFFF;
+}
+
+h3 {
+    color: #CCCCCC;
+}
+
+
+.modal-header h3 {
+    color: #666666;
+    line-height: 30px;
+    margin: 0;
+}
+
+.modal-body label, .modal-body a{
+	color:#333;
+}
+
+.modal-body a:hover{
+	color:#CC0000;
+}
+
+
+ul, ol {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.input-append .btn {
+    font-size: 13px;
+    padding: 4px 12px;
+}
+
+a.btn {
+    background-image: none !important;
+    border-radius: 4px 4px 4px 4px !important;
+    margin: 0 1px !important;
+    padding: 7px 6px 5px !important;
+    text-shadow: none !important;
+}
+
+label, input, button, select, textarea {
+    font-size: 15px;
+    font-weight: normal;
+}
+

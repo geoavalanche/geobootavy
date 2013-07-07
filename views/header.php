@@ -4,23 +4,25 @@
 	<title><?php echo $page_title.$site_name; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<link href="<?php echo url::site().'themes/madev/css/bootstrap-combined.no-icons.min.css' ?>"  rel="stylesheet" type="text/css">
+	<link href="<?php echo url::site().'themes/madev/css/bootstrap-combined.no-icons.min.css' ?>"  rel="stylesheet" type="text/css" />
 	
 	<?php echo $header_block; ?>
 	<?php Event::run('ushahidi_action.header_scripts'); // Action::header_scripts - Additional Inline Scripts from Plugins ?>
 	
-	<link href="<?php echo url::site().'themes/madev/css/dynatree/skin-vista/ui.dynatree.css' ?>" rel="stylesheet" type="text/css">
-	<link href="<?php echo url::site().'themes/madev/css/bootstrap-overwrite.css' ?>"  rel="stylesheet" type="text/css">
-	<link href="<?php echo url::site().'themes/madev/css/flexslider.css' ?>"  rel="stylesheet" type="text/css">
-	<link href="<?php echo url::site().'themes/madev/css/tablecloth.css' ?>" rel="stylesheet" type="text/css">
-	<link href="<?php echo url::site().'themes/madev/css/madev.css' ?>" rel="stylesheet" type="text/css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+	<link href="<?php echo url::site().'themes/madev/css/dynatree/skin-vista/ui.dynatree.css' ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo url::site().'themes/madev/css/bootstrap-overwrite.css' ?>"  rel="stylesheet" type="text/css" />
+	<link href="<?php echo url::site().'themes/madev/css/bootstrap-fileupload.css' ?>"  rel="stylesheet" type="text/css" />
+	<link href="<?php echo url::site().'themes/madev/css/flexslider.css' ?>"  rel="stylesheet" type="text/css" />
+	<link href="<?php echo url::site().'themes/madev/css/tablecloth.css' ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo url::site().'themes/madev/css/madev.css' ?>" rel="stylesheet" type="text/css" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet" />
 	
 	<script src="<?php echo url::site().'themes/madev/js/highchart/highcharts.js' ?>" type="text/javascript"></script>
 	<script src="<?php echo url::site().'themes/madev/js/highchart/themes/gray.js' ?>" type="text/javascript"></script>
 	<script src="<?php echo url::site().'themes/madev/js/jquery.dynatree.min.js' ?>" type="text/javascript"></script>
 	<script src="<?php echo url::site().'themes/madev/js/jquery.flexslider-min.js' ?>" type="text/javascript"></script>
 	<script src="<?php echo url::site().'themes/madev/js/bootstrap.2.3.2.min.js' ?>" type="text/javascript"></script>
+	<script src="<?php echo url::site().'themes/madev/js/bootstrap-fileupload.min.js' ?>" type="text/javascript"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -32,7 +34,7 @@
 			$('.jquery-arrow').click(function(){
 				$('.downbar').toggleClass('up', 500);          
 				if($("#downbar").hasClass("up")) $('#topheader').css("margin-top", "0");
-				else $('#topheader').css("margin-top", "40px");
+				else $('#topheader').css("margin-top", "38px");
 				$('.jquery-bar').slideToggle();
 			});  
 			
@@ -151,7 +153,7 @@
 
 
 	<!-- header -->
-	<div class="container" style="margin-top:5px">
+	<div class="container" style="margin-top:1px">
 		<div class="row-fluid">
 			<div id="header" class="span12">
 				<!-- logo -->
@@ -264,9 +266,11 @@
 
 
 
-<div id="modalLogin" class="modal hide fade" role="dialog">
+<div id="modalLogin" class="modal hide fade">
 	 <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal"><i class="icon-remove"></i></button>
+		<button class="close" onclick="closeModal('modalLogin')">
+			<i class="icon-remove"></i>
+		</button>
 		<h3 id="myModalLabel"><?php echo Kohana::lang('ui_main.login'); ?></h3>
 	</div>
 	<div class="modal-body">
