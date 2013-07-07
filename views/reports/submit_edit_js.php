@@ -782,20 +782,34 @@
 			return false;
 		}
 		
-		function formSwitch(form_id, incident_id)
-		{
-			var answer = confirm('<?php echo Kohana::lang('ui_admin.are_you_sure_you_want_to_switch_forms'); ?>?');
-			if (answer){
-				$('#form_loader').html('<img src="<?php echo url::file_loc('img')."media/img/loading_g.gif"; ?>">');
+		function formSwitch(form_id, incident_id, textFormType){
+			/*var answer = confirm('<?php echo Kohana::lang('ui_admin.are_you_sure_you_want_to_switch_forms'); ?>?');
+			if (answer){*/
+				/*$('#form_loader').html('<img src="<?php echo url::file_loc('img')."media/img/loading_g.gif"; ?>">');*/
 				$.post("<?php echo url::site().'reports/switch_form'; ?>", { form_id: form_id, incident_id: incident_id },
 					function(data){
+					
+						$.each($("#treeCategory").find("li.tltp"), function(index, li){
+							var nameCategory = $(li).find("label:first").text().toUpperCase();
+							if(textFormType == "DEFAULT FORM"){
+								$(li).find("input").removeAttr("disabled");
+							}else{
+								$(li).find("input").attr("disabled", "true");
+							}
+							$(li).find("input:first").removeAttr("checked");
+							if(textFormType == nameCategory){
+								$(li).find("input:first").attr("checked", "checked");
+								$(li).find("input").removeAttr("disabled");
+							}
+						});
+					
 						if (data.status == 'success'){
 							$('#custom_forms').html('');
 							$('#custom_forms').html(data.response);
 							$('#form_loader').html('');
 						}
 				  	}, "json");
-			}
+			/*}*/
 		}
 		
 		/* Keep track of the selected features */

@@ -56,8 +56,12 @@
 									</label>
 									<div class="controls">
 										<span class="sel-holder">
-											<?php print form::dropdown('form_id', $forms, $form['form_id'],
-										' onchange="formSwitch(this.options[this.selectedIndex].value, \''.$id.'\')"') ?>
+											<?php 
+											foreach ($forms as $i => $value) {
+												$forms[$i] = strtoupper($value);
+											}
+											print form::dropdown('form_id', $forms, $form['form_id'],
+										' onchange="formSwitch(this.options[this.selectedIndex].value, \''.$id.'\', this.options[this.selectedIndex].text)"') ?>
 										</span>
 										<div id="form_loader" style="float:left;"></div>
 									</div>
