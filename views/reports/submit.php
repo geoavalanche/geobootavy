@@ -509,3 +509,13 @@
 		<!-- end report form block -->
 	</div>
 </div>
+
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var form_id = $("select#form_id").find('option:selected').val();
+		var textFormType = $("select#form_id").find('option:selected').text();
+		formSwitch(form_id, "", textFormType);		
+	});
+</script>

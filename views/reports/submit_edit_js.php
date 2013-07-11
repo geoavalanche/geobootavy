@@ -802,11 +802,14 @@
 								$(li).find("input").removeAttr("disabled");
 							}
 						});
-					
+						
 						if (data.status == 'success'){
 							$('#custom_forms').html('');
 							$('#custom_forms').html(data.response);
 							$('#form_loader').html('');
+							$("#boxForm" + form_id).collapse({
+								toggle: true
+							});
 						}
 				  	}, "json");
 			/*}*/

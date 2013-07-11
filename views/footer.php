@@ -76,6 +76,11 @@
 							</a>
 						</span>
 					</div>
+					
+					
+					<b>Be our friend on facebook</b>
+<p id="pFB"></p>
+<iframe scrolling="no" frameborder="0" allowtransparency="true" style="border:none; overflow:hidden; width:450px; height:80px;" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2FGeoavalanche&send=false&layout=standard&width=450&show_faces=true&action=like&colorscheme=dark&font&height=80"></iframe>
 
 				</div>
 				<!-- / footer content -->

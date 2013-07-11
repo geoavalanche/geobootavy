@@ -1,31 +1,15 @@
 <div id="custom_forms">
 
 <?php
-	
-	$formCustom = array();
-	foreach (customforms::get_custom_forms() as $custom_forms){
-		$idForm = $custom_forms->id;
-		$formCustom[] = $idForm;
-		$formCustom[$idForm] = array("title" => $custom_forms->form_title, "fieldCustom" => array());
-	}
-
 	// If the user has insufficient permissions to edit report fields, we flag this for a warning message
 	$show_permission_message = FALSE;
 
 	foreach ($disp_custom_fields as $field_id => $field_property){
 	
-	
-		$htmlField = "";
-		
 		// Is the field required
-		$isrequired = ($field_property['field_required'])
-			? "<span class='required'> *</span>"
-			: "";
-
+		$isrequired = ($field_property['field_required'])? "<span class='required'> *</span>": "";
 		// Private field
-		$isprivate = ($field_property['field_ispublic_visible'])
-			? '<span class="private">(' . Kohana::lang('ui_main.private') . ')</span>'
-			: '';
+		$isprivate = ($field_property['field_ispublic_visible'])? '<span class="private">(' . Kohana::lang('ui_main.private') . ')</span>': '';
 
 		// Workaround for situations where admin can view, but doesn't have sufficient perms to edit.
 		if (isset($custom_field_mismatch))
@@ -69,7 +53,6 @@
 
 		if ($field_property['field_type'] == 1){
 			// Text Field
-			/* OLD CODE
 			echo "<div class=\"report_row control-group\" id=\"custom_field_row_" . $field_id ."\">";
 			$field_options = customforms::get_custom_field_options($field_id);
 			if (isset($field_options['field_hidden']) AND !isset($editor)){
@@ -84,23 +67,9 @@
 				echo form::input('custom_field['.$field_id.']', $field_value, $id_name .' class="text custom_text"');
 			}
 			echo "</div>";
-			*/
 			
-			$htmlField.= "<div class=\"report_row control-group\" id=\"custom_field_row_" . $field_id ."\">";
-			$field_options = customforms::get_custom_field_options($field_id);
-			if (isset($field_options['field_hidden']) AND !isset($editor)){
-				if($field_options['field_hidden'] == 1){
-					$htmlField.= form::hidden($field_property['field_name'], $field_value);
-				}else{
-					$htmlField.= "<label class='control-label' for='custom_field_".$field_id."'>".$field_property['field_name'].$isrequired." ".$isprivate."&nbsp;:&nbsp;</label>";
-					$htmlField.= form::input('custom_field['.$field_id.']', $field_value, $id_name.' class="text custom_text"');
-				}
-			}else{
-				$htmlField.= "<label class='control-label' for='custom_field_".$field_id."'>" . $field_property['field_name'] . $isrequired . " " . $isprivate . "&nbsp;:&nbsp;</label>";
-				$htmlField.= form::input('custom_field['.$field_id.']', $field_value, $id_name .' class="text custom_text"');
-			}
-			$htmlField.= "</div>";
-			//echo $htmlField;
+
+
 
 			
 			
@@ -176,9 +145,8 @@
 			
 		}elseif ($field_property['field_type'] >=5 AND $field_property['field_type'] <= 7){
 			// Multiple-selector Fields
-			$html = '';
-			$html .="<div class=\"report_row control-group\" id=\"custom_field_row_" . $field_id ."\">";
-			$html .="<label class='control-label' for='custom_field_".$field_id."'>" . $field_property['field_name'] . $isrequired . " " . $isprivate . "&nbsp;:&nbsp;</label>";
+			echo "<div class=\"report_row control-group\" id=\"custom_field_row_" . $field_id ."\">";
+			echo "<label class='control-label' for='custom_field_".$field_id."'>" . $field_property['field_name'] . $isrequired . " " . $isprivate . "&nbsp;:&nbsp;</label>";
 			$defaults = explode('::',$field_property['field_default']);
 			$default = (isset($defaults[1])) ? $defaults[1] : 0;
 
@@ -189,6 +157,7 @@
 			}
 
 			$options = explode(',',$defaults[0]);
+			$html ='';
 			switch ($field_property['field_type'])
 			{
 				case 5:
@@ -259,13 +228,13 @@
 					break;
 
 			}
-			$html .= "</div>";
-			//echo $html;
-			$htmlField = $html;
 
-
-
+			echo $html;
+			echo "</div>";
 		}
+		
+		
+		
 		elseif ($field_property['field_type'] == 8 )
 		{
 			//custom div
@@ -353,33 +322,6 @@
 			//if we're doing custom divs we don't want these div's to get in the way.
 			//echo "</div>";
 		}
-		
-		
-		$formCustom[$field_property['form_id']]["fieldCustom"][] = $htmlField;
-		
 	}
-	
-	//foreach ($form as $custom_forms){
-	foreach (customforms::get_custom_forms() as $custom_forms){
-		$idForm = $custom_forms->id;
-		if(count($formCustom[$idForm]["fieldCustom"]) > 0){
-			echo "<div class='accordion-group'>";
-			echo "<div class='accordion-heading'><a class='accordion-toggle' data-toggle='collapse' href='#boxForm".$idForm."'>";
-			echo "<i class='icon-edit'></i> ".strtoupper($formCustom[$idForm]["title"])." (".count($formCustom[$idForm]["fieldCustom"]).")";
-			echo "</a>";
-			echo "</div>";
-			echo "<div id='boxForm".$idForm."' class='accordion-body collapse out'>";
-			echo "<div class='accordion-inner'>";
-			for ($i = 0; $i < count($formCustom[$idForm]["fieldCustom"]); ++$i) {
-				echo $formCustom[$idForm]["fieldCustom"][$i];
-			}
-			echo "</div></div></div>";
-		}
-	}
-
-	
-
-	
-	
 ?>
 </div>

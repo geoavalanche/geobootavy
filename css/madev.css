@@ -1201,7 +1201,7 @@ ul.pager {
     margin-bottom: 5px;
 }
 
-h1, a, table.table-list tbody tr td a, .hover .r_details h3 a.r_title, div.footermenu ul li a, div.search-form input.text {
+h1, table.table-list tbody tr td a, .hover .r_details h3 a.r_title, div.footermenu ul li a, div.search-form input.text {
     color: #FFFFFF;
 }
 
@@ -1247,5 +1247,35 @@ a.btn {
 label, input, button, select, textarea {
     font-size: 15px;
     font-weight: normal;
+}
+
+.widget-content{
+	font-family:verdana !important;
+}
+
+.widget-content h5{
+	font-family:verdana !important;
+	font-size: 15px !important;
+    font-weight: normal;
+}
+
+a, a:focus{
+	color:#A3C4E2;
+}
+
+a:hover{
+	color:#BD362F;
+}
+
+.alert_response, .thanks_msg {
+    background-color: #444444;
+    border: 1px solid #CCCCCC;
+    font: 14px/17px verdana;
+    margin: 10px;
+    padding: 10px;
+}
+
+h1{
+	font-size:18px !important;
 }
 
