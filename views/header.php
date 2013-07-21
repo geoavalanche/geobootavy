@@ -214,7 +214,7 @@
 					<form id="formSearch" action="search" class="navbar-search">
 						<div class="input-append">
 							<input name="k" type="text" placeholder="<?php echo Kohana::lang('ui_main.search') ?>" class="search-query span2">
-							<button class="btn btn-inverse" type="button" onclick="javascript:$('#formSearch').submit()">
+							<button class="btn btn-inverse" type="button" onclick="javascript:alert($('#formSearch').serialize());$('#formSearch').submit()">
 								<i class="icon-search"></i>
 							</button>
 						</div>

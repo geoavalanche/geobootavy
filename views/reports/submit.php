@@ -424,10 +424,6 @@
 						<label class="control-label" for="incident_photo"><i class="icon-picture"></i>&nbsp;<?php echo Kohana::lang('ui_main.reports_photos'); ?></label>
 						<div class="controls">
 							<?php $i = (empty($form['incident_photo']['name'][0])) ? 1 : 0;	?>
-							<?php if (empty($form['incident_photo']['name'][0])): ?>
-							
-							
-							<?php //print form::upload('incident_photo[]', '', ' class="file"'); ?>
 							<div class="fileupload fileupload-new pull-left" data-provides="fileupload">
 								<div class="input-append">
 									<div class="uneditable-input span3">
@@ -444,25 +440,6 @@
 							<a href="#" class="btn btn-danger pull-left" onClick="addFormField('divPhoto', 'incident_photo','photo_id','file'); return false;">
 								<i class="icon-plus-sign"></i>
 							</a>
-
-
-							<?php else: ?>
-								<?php foreach ($form['incident_photo']['name'] as $value): ?>
-									<div id="<?php echo $i; ?>">
-										<?php print form::upload('incident_photo[]', $value, ' class="file"'); ?>
-										<a href="#" class="btn btn-danger" onClick="addFormField('divPhoto','incident_photo','photo_id','file'); return false;">
-											<i class="icon-plus-sign"></i>
-										</a>
-										<?php if ($i != 0): ?>
-											<?php $css_id = "#incident_photo_".$i; ?>
-											<a href="#" class="btn btn-danger"	onClick="removeFormField('<?php echo $css_id; ?>'); return false;">
-												<i class="icon-minus-sign"></i>
-											</a>
-										<?php endif; ?>
-									</div>
-									<?php $i++; ?>
-								<?php endforeach; ?>
-							<?php endif; ?>	
 							<?php print form::input(array('name'=>'photo_id','type'=>'hidden','id'=>'photo_id'), $i); ?>
 						</div>	
 					</div>
